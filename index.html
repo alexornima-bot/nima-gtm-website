@@ -66,7 +66,7 @@ nav.scrolled{
 }
 .nav-brand{display:flex;flex-direction:column;gap:1px;}
 .nav-name{font-family:var(--serif);font-size:17px;font-weight:400;color:var(--white);letter-spacing:0.02em;line-height:1}
-.nav-descriptor{font-size:7.5px;letter-spacing:0.22em;color:var(--white-40);text-transform:uppercase;line-height:1}
+.nav-descriptor{font-size:7.5px;letter-spacing:0.22em;color:var(--white-60);text-transform:uppercase;line-height:1}
 .nav-links{display:flex;align-items:center;gap:40px}
 .nav-link{font-size:9px;letter-spacing:0.2em;color:var(--white-60);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
 .nav-link:hover{color:var(--white)}
@@ -83,8 +83,8 @@ nav.scrolled{
 .grid-bg{
   position:absolute;inset:0;
   background-image:
-    linear-gradient(var(--white-05) 1px,transparent 1px),
-    linear-gradient(90deg,var(--white-05) 1px,transparent 1px);
+    linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
   background-size:40px 40px;
   pointer-events:none;
 }
@@ -110,7 +110,7 @@ nav.scrolled{
   padding-top:80px;
 }
 .hero-eyebrow{
-  font-size:9px;letter-spacing:0.3em;color:var(--white-40);
+  font-size:9px;letter-spacing:0.3em;color:var(--white-70,rgba(255,255,255,0.7));
   text-transform:uppercase;
   margin-bottom:24px;
   opacity:0;animation:fadeUp 0.8s 0.2s forwards;
@@ -185,7 +185,7 @@ nav.scrolled{
 section{position:relative;overflow:hidden}
 .section-inner{max-width:1200px;margin:0 auto;padding:120px 48px;}
 .section-eyebrow{
-  font-size:8.5px;letter-spacing:0.28em;color:var(--white-40);
+  font-size:8.5px;letter-spacing:0.28em;color:var(--white-60);
   text-transform:uppercase;
   margin-bottom:48px;
   display:flex;align-items:center;gap:16px;
@@ -259,7 +259,7 @@ section{position:relative;overflow:hidden}
   margin-bottom:16px;line-height:1.1;
 }
 .offer-duration{
-  font-size:8px;letter-spacing:0.2em;color:var(--white-40);
+  font-size:8px;letter-spacing:0.2em;color:var(--white-60);
   text-transform:uppercase;
   margin-bottom:24px;padding-bottom:24px;
   border-bottom:0.5px solid var(--white-10);
@@ -296,40 +296,40 @@ section{position:relative;overflow:hidden}
 }
 .proof-city--london{
   background:
-    linear-gradient(to bottom,rgba(192,192,200,0.20) 0%,rgba(192,192,200,0.20) 4%,transparent 5%) 48.5% 0/1.5px 100% no-repeat,
-    linear-gradient(to bottom,transparent 28%,rgba(192,192,200,0.09) 28%) 36% 0/16% 100% no-repeat,
-    linear-gradient(to bottom,transparent 40%,rgba(192,192,200,0.07) 40%) 50% 0/20% 100% no-repeat,
-    linear-gradient(to bottom,transparent 34%,rgba(192,192,200,0.06) 34%) 68% 0/13% 100% no-repeat,
-    linear-gradient(to bottom,transparent 54%,rgba(192,192,200,0.05) 54%) 18% 0/62% 100% no-repeat,
-    radial-gradient(ellipse 80% 30% at 50% 100%,rgba(192,192,200,0.06) 0%,transparent 70%),
+    linear-gradient(to bottom,rgba(192,192,200,0.55) 0%,rgba(192,192,200,0.55) 4%,transparent 5%) 48.5% 0/1.5px 100% no-repeat,
+    linear-gradient(to bottom,transparent 28%,rgba(192,192,200,0.22) 28%) 36% 0/16% 100% no-repeat,
+    linear-gradient(to bottom,transparent 40%,rgba(192,192,200,0.18) 40%) 50% 0/20% 100% no-repeat,
+    linear-gradient(to bottom,transparent 34%,rgba(192,192,200,0.15) 34%) 68% 0/13% 100% no-repeat,
+    linear-gradient(to bottom,transparent 54%,rgba(192,192,200,0.12) 54%) 18% 0/62% 100% no-repeat,
+    radial-gradient(ellipse 80% 30% at 50% 100%,rgba(192,192,200,0.10) 0%,transparent 70%),
     #090910;
 }
 .proof-city--paris{
   background:
-    linear-gradient(to bottom,rgba(192,192,200,0.24) 0%,rgba(192,192,200,0.24) 4%,transparent 5%) 50% 0/1px 100% no-repeat,
-    linear-gradient(to bottom,transparent 5%,rgba(192,192,200,0.08) 5%,rgba(192,192,200,0.04) 47%,transparent 48%) 47% 0/9% 100% no-repeat,
-    linear-gradient(to bottom,transparent 37%,rgba(192,192,200,0.07) 37%) 17% 0/23% 100% no-repeat,
-    linear-gradient(to bottom,transparent 43%,rgba(192,192,200,0.06) 43%) 35% 0/11% 100% no-repeat,
-    linear-gradient(to bottom,transparent 39%,rgba(192,192,200,0.07) 39%) 59% 0/21% 100% no-repeat,
-    linear-gradient(to bottom,transparent 46%,rgba(192,192,200,0.05) 46%) 78% 0/15% 100% no-repeat,
-    radial-gradient(ellipse 70% 25% at 50% 100%,rgba(192,192,200,0.05) 0%,transparent 70%),
+    linear-gradient(to bottom,rgba(192,192,200,0.60) 0%,rgba(192,192,200,0.60) 4%,transparent 5%) 50% 0/1px 100% no-repeat,
+    linear-gradient(to bottom,transparent 5%,rgba(192,192,200,0.20) 5%,rgba(192,192,200,0.10) 47%,transparent 48%) 47% 0/9% 100% no-repeat,
+    linear-gradient(to bottom,transparent 37%,rgba(192,192,200,0.18) 37%) 17% 0/23% 100% no-repeat,
+    linear-gradient(to bottom,transparent 43%,rgba(192,192,200,0.15) 43%) 35% 0/11% 100% no-repeat,
+    linear-gradient(to bottom,transparent 39%,rgba(192,192,200,0.18) 39%) 59% 0/21% 100% no-repeat,
+    linear-gradient(to bottom,transparent 46%,rgba(192,192,200,0.12) 46%) 78% 0/15% 100% no-repeat,
+    radial-gradient(ellipse 70% 25% at 50% 100%,rgba(192,192,200,0.10) 0%,transparent 70%),
     #0a0a0d;
 }
 .proof-city--europe{
   background:
-    linear-gradient(to bottom,transparent 47%,rgba(192,192,200,0.06) 47%) 0 0/100% 100% no-repeat,
-    linear-gradient(to bottom,transparent 31%,rgba(192,192,200,0.09) 31%) 22% 0/11% 100% no-repeat,
-    linear-gradient(to bottom,transparent 37%,rgba(192,192,200,0.08) 37%) 42% 0/17% 100% no-repeat,
-    linear-gradient(to bottom,transparent 27%,rgba(192,192,200,0.10) 27%) 62% 0/9% 100% no-repeat,
-    linear-gradient(to bottom,transparent 41%,rgba(192,192,200,0.07) 41%) 75% 0/19% 100% no-repeat,
-    radial-gradient(ellipse 90% 35% at 50% 100%,rgba(192,192,200,0.04) 0%,transparent 70%),
+    linear-gradient(to bottom,transparent 47%,rgba(192,192,200,0.15) 47%) 0 0/100% 100% no-repeat,
+    linear-gradient(to bottom,transparent 31%,rgba(192,192,200,0.22) 31%) 22% 0/11% 100% no-repeat,
+    linear-gradient(to bottom,transparent 37%,rgba(192,192,200,0.20) 37%) 42% 0/17% 100% no-repeat,
+    linear-gradient(to bottom,transparent 27%,rgba(192,192,200,0.25) 27%) 62% 0/9% 100% no-repeat,
+    linear-gradient(to bottom,transparent 41%,rgba(192,192,200,0.18) 41%) 75% 0/19% 100% no-repeat,
+    radial-gradient(ellipse 90% 35% at 50% 100%,rgba(192,192,200,0.08) 0%,transparent 70%),
     #0c0c0a;
 }
 .proof-city:hover{filter:brightness(1.5)}
 .proof-city-label{
   position:absolute;bottom:14px;left:18px;
   font-size:7.5px;letter-spacing:0.22em;
-  color:var(--white-60);text-transform:uppercase;
+  color:var(--white-80);text-transform:uppercase;
   font-family:var(--sans);
 }
 
@@ -348,11 +348,11 @@ section{position:relative;overflow:hidden}
 }
 .stat-label{
   font-size:8.5px;letter-spacing:0.2em;
-  color:var(--white-40);text-transform:uppercase;
+  color:var(--white-60);text-transform:uppercase;
   line-height:1.6;
 }
 .proof-logos-label{
-  font-size:8.5px;letter-spacing:0.22em;color:var(--white-20);
+  font-size:8.5px;letter-spacing:0.22em;color:var(--white-50,rgba(255,255,255,0.5));
   text-transform:uppercase;margin-bottom:24px;
 }
 .proof-logos{
@@ -406,7 +406,7 @@ section{position:relative;overflow:hidden}
   border-top:0.5px solid var(--white-10);
 }
 .about-langs-label{
-  font-size:8px;letter-spacing:0.22em;color:var(--white-20);
+  font-size:8px;letter-spacing:0.22em;color:var(--white-50,rgba(255,255,255,0.5));
   text-transform:uppercase;margin-bottom:16px;
 }
 .about-langs-list{display:flex;flex-wrap:wrap;gap:8px;}
@@ -448,14 +448,14 @@ footer{
   padding:24px 48px;
   display:flex;align-items:center;justify-content:space-between;
 }
-.footer-copy{font-size:8px;letter-spacing:0.15em;color:var(--white-20);text-transform:uppercase;}
+.footer-copy{font-size:8px;letter-spacing:0.15em;color:var(--white-50,rgba(255,255,255,0.5));text-transform:uppercase;}
 .footer-nav{display:flex;gap:32px}
 .footer-nav a{
   font-size:8px;letter-spacing:0.15em;
-  color:var(--white-20);text-transform:uppercase;
+  color:var(--white-60);text-transform:uppercase;
   text-decoration:none;transition:color 0.2s;
 }
-.footer-nav a:hover{color:var(--white-40)}
+.footer-nav a:hover{color:var(--white)}
 
 /* ANIMATIONS */
 @keyframes fadeUp{
@@ -514,7 +514,7 @@ footer{
     </div>
   </a>
   <div class="nav-links">
-    <a href="#offers" class="nav-link">Services</a>
+    <a href="services.html" class="nav-link">Services</a>
     <a href="#about" class="nav-link">About</a>
     <a href="work.html" class="nav-link">Work</a>
     <a href="https://calendly.com/alexornima/30min" target="_blank" class="nav-cta">Book a Call</a>
@@ -734,12 +734,12 @@ footer{
 <!-- FOOTER -->
 <footer>
   <p class="footer-copy">© 2026 Nima GTM · Revenue Studio</p>
-  <nav class="footer-nav">
+  <div class="footer-nav">
     <a href="index.html">Home</a>
     <a href="work.html">Work</a>
     <a href="https://www.linkedin.com/in/alexis-naraghi-510415134/" target="_blank">LinkedIn</a>
     <a href="https://calendly.com/alexornima/30min" target="_blank">Book a Call</a>
-  </nav>
+  </div>
 </footer>
 
 <script>

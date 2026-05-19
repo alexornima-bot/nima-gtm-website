@@ -59,7 +59,7 @@ nav{
 }
 .nav-brand{display:flex;flex-direction:column;gap:1px;}
 .nav-name{font-family:var(--serif);font-size:17px;font-weight:400;color:var(--white);letter-spacing:0.02em;line-height:1}
-.nav-descriptor{font-size:7.5px;letter-spacing:0.22em;color:var(--white-40);text-transform:uppercase;line-height:1}
+.nav-descriptor{font-size:7.5px;letter-spacing:0.22em;color:var(--white-60);text-transform:uppercase;line-height:1}
 .nav-links{display:flex;align-items:center;gap:40px}
 .nav-link{font-size:9px;letter-spacing:0.2em;color:var(--white-60);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
 .nav-link:hover,.nav-link.active{color:var(--white)}
@@ -74,7 +74,7 @@ nav{
 /* GRID */
 .grid-bg{
   position:absolute;inset:0;
-  background-image:linear-gradient(var(--white-05) 1px,transparent 1px),linear-gradient(90deg,var(--white-05) 1px,transparent 1px);
+  background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
   background-size:40px 40px;pointer-events:none;
 }
 
@@ -86,7 +86,7 @@ nav{
   overflow:hidden;
 }
 .page-eyebrow{
-  font-size:8.5px;letter-spacing:0.28em;color:var(--white-40);
+  font-size:8.5px;letter-spacing:0.28em;color:var(--white-60);
   text-transform:uppercase;margin-bottom:24px;
   display:flex;align-items:center;gap:16px;
   opacity:0;animation:fadeUp 0.8s 0.2s forwards;
@@ -134,7 +134,7 @@ nav{
 }
 .case-client{
   font-size:8.5px;letter-spacing:0.28em;
-  color:var(--white-40);text-transform:uppercase;
+  color:var(--white-60);text-transform:uppercase;
   margin-bottom:12px;
   display:flex;align-items:center;gap:16px;
 }
@@ -152,8 +152,8 @@ nav{
 }
 .case-tag{
   font-size:8px;letter-spacing:0.15em;
-  color:var(--white-40);text-transform:uppercase;
-  border:0.5px solid var(--white-20);
+  color:var(--white-60);text-transform:uppercase;
+  border:0.5px solid var(--white-30,rgba(255,255,255,0.3));
   padding:5px 12px;
 }
 .case-intro{
@@ -177,7 +177,7 @@ nav{
 }
 .case-section-label{
   font-size:8px;letter-spacing:0.22em;
-  color:var(--white-20);text-transform:uppercase;
+  color:var(--white-50,rgba(255,255,255,0.5));text-transform:uppercase;
   margin-bottom:20px;
   padding-bottom:16px;
   border-bottom:0.5px solid var(--white-10);
@@ -196,7 +196,7 @@ nav{
 .case-section-text li::before{
   content:'—';
   position:absolute;left:0;
-  color:var(--white-20);
+  color:var(--white-40);
   font-size:11px;
 }
 
@@ -208,7 +208,7 @@ nav{
 }
 .case-outcomes-label{
   font-size:8px;letter-spacing:0.22em;
-  color:var(--white-20);text-transform:uppercase;
+  color:var(--white-50,rgba(255,255,255,0.5));text-transform:uppercase;
   margin-bottom:32px;
 }
 .outcomes-grid{
@@ -225,7 +225,7 @@ nav{
 }
 .outcome-label{
   font-size:8.5px;letter-spacing:0.15em;
-  color:var(--white-40);text-transform:uppercase;
+  color:var(--white-60);text-transform:uppercase;
   line-height:1.6;
 }
 
@@ -244,7 +244,7 @@ nav{
 }
 .case-quote-attr{
   font-size:8.5px;letter-spacing:0.2em;
-  color:var(--white-40);text-transform:uppercase;
+  color:var(--white-60);text-transform:uppercase;
 }
 
 /* BETWEEN CASES */
@@ -275,7 +275,7 @@ nav{
 .footer-cta-right{display:flex;flex-direction:column;align-items:flex-end;gap:24px;flex-shrink:0;}
 .footer-meta{
   font-size:8.5px;letter-spacing:0.18em;
-  color:rgba(255,255,255,0.3);text-transform:uppercase;
+  color:rgba(255,255,255,0.5);text-transform:uppercase;
   text-align:right;line-height:2;
 }
 .footer-meta a{color:inherit;text-decoration:none;transition:color 0.2s}
@@ -293,10 +293,10 @@ footer{
   padding:24px 48px;
   display:flex;align-items:center;justify-content:space-between;
 }
-.footer-copy{font-size:8px;letter-spacing:0.15em;color:var(--white-20);text-transform:uppercase;}
+.footer-copy{font-size:8px;letter-spacing:0.15em;color:var(--white-50,rgba(255,255,255,0.5));text-transform:uppercase;}
 .footer-nav{display:flex;gap:32px}
-.footer-nav a{font-size:8px;letter-spacing:0.15em;color:var(--white-20);text-transform:uppercase;text-decoration:none;transition:color 0.2s;}
-.footer-nav a:hover{color:var(--white-40)}
+.footer-nav a{font-size:8px;letter-spacing:0.15em;color:var(--white-60);text-transform:uppercase;text-decoration:none;transition:color 0.2s;}
+.footer-nav a:hover{color:var(--white)}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(32px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);}
@@ -334,7 +334,7 @@ footer{
     </div>
   </a>
   <div class="nav-links">
-    <a href="index.html#offers" class="nav-link">Services</a>
+    <a href="services.html" class="nav-link">Services</a>
     <a href="index.html#about" class="nav-link">About</a>
     <a href="work.html" class="nav-link active">Work</a>
     <a href="https://calendly.com/alexornima/30min" target="_blank" class="nav-cta">Book a Call</a>
@@ -508,12 +508,12 @@ footer{
 
 <footer>
   <p class="footer-copy">© 2026 Nima GTM · Revenue Studio</p>
-  <nav class="footer-nav">
+  <div class="footer-nav">
     <a href="index.html">Home</a>
     <a href="work.html">Work</a>
     <a href="https://www.linkedin.com/in/alexis-naraghi-510415134/" target="_blank">LinkedIn</a>
     <a href="https://calendly.com/alexornima/30min" target="_blank">Book a Call</a>
-  </nav>
+  </div>
 </footer>
 
 <script>
