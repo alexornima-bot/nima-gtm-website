@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Nima GTM · Revenue Studio — Client Work. Case studies from OKS and NextLevel.">
+<title>Work · Nima GTM · Revenue Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#000000;
+  --white:#ffffff;
+  --white-60:rgba(255,255,255,0.6);
+  --white-40:rgba(255,255,255,0.4);
+  --white-20:rgba(255,255,255,0.2);
+  --white-10:rgba(255,255,255,0.1);
+  --white-05:rgba(255,255,255,0.05);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Montserrat',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:var(--sans);
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--white-20)}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:24px 48px;
+  border-bottom:0.5px solid var(--white-10);
+  background:rgba(0,0,0,0.92);
+  backdrop-filter:blur(12px);
+  transition:padding 0.4s;
+}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-logo-mark{
+  width:36px;height:36px;
+  background:var(--black);
+  border:0.5px solid var(--white-40);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-size:18px;font-weight:700;color:var(--white);
+  border-radius:6px;flex-shrink:0;
+}
+.nav-brand{display:flex;flex-direction:column;gap:1px;}
+.nav-name{font-family:var(--serif);font-size:17px;font-weight:400;color:var(--white);letter-spacing:0.02em;line-height:1}
+.nav-descriptor{font-size:7.5px;letter-spacing:0.22em;color:var(--white-40);text-transform:uppercase;line-height:1}
+.nav-links{display:flex;align-items:center;gap:40px}
+.nav-link{font-size:9px;letter-spacing:0.2em;color:var(--white-60);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
+.nav-link:hover,.nav-link.active{color:var(--white)}
+.nav-cta{
+  font-size:9px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--white);text-decoration:none;
+  border:0.5px solid var(--white-40);padding:10px 22px;
+  transition:background 0.2s,border-color 0.2s;
+}
+.nav-cta:hover{background:var(--white);color:var(--black);border-color:var(--white)}
+
+/* GRID */
+.grid-bg{
+  position:absolute;inset:0;
+  background-image:linear-gradient(var(--white-05) 1px,transparent 1px),linear-gradient(90deg,var(--white-05) 1px,transparent 1px);
+  background-size:40px 40px;pointer-events:none;
+}
+
+/* PAGE HEADER */
+#page-header{
+  position:relative;
+  padding:160px 48px 100px;
+  border-bottom:0.5px solid var(--white-10);
+  overflow:hidden;
+}
+.page-eyebrow{
+  font-size:8.5px;letter-spacing:0.28em;color:var(--white-40);
+  text-transform:uppercase;margin-bottom:24px;
+  display:flex;align-items:center;gap:16px;
+  opacity:0;animation:fadeUp 0.8s 0.2s forwards;
+}
+.page-eyebrow::before{content:'';display:block;width:24px;height:0.5px;background:var(--white-40);}
+.page-title{
+  font-family:var(--serif);
+  font-size:clamp(48px,7vw,96px);
+  font-weight:300;line-height:0.95;
+  letter-spacing:-0.02em;
+  color:var(--white);
+  max-width:700px;
+  opacity:0;animation:fadeUp 0.8s 0.4s forwards;
+}
+.page-sub{
+  margin-top:32px;
+  font-size:13px;line-height:1.9;
+  color:var(--white-60);font-weight:300;
+  max-width:500px;
+  opacity:0;animation:fadeUp 0.8s 0.6s forwards;
+}
+
+/* CASE STUDIES */
+.case-study{
+  border-bottom:0.5px solid var(--white-10);
+  position:relative;overflow:hidden;
+}
+.case-inner{
+  max-width:1200px;margin:0 auto;
+  padding:100px 48px;
+}
+.case-header{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  margin-bottom:80px;
+  align-items:end;
+}
+.case-meta{}
+.case-index{
+  font-family:var(--serif);
+  font-size:80px;font-weight:300;
+  color:rgba(255,255,255,0.06);
+  line-height:1;margin-bottom:16px;
+}
+.case-client{
+  font-size:8.5px;letter-spacing:0.28em;
+  color:var(--white-40);text-transform:uppercase;
+  margin-bottom:12px;
+  display:flex;align-items:center;gap:16px;
+}
+.case-client::before{content:'';display:block;width:24px;height:0.5px;background:var(--white-40);}
+.case-title{
+  font-family:var(--serif);
+  font-size:clamp(32px,4vw,52px);
+  font-weight:300;line-height:1.1;
+  color:var(--white);
+}
+.case-title em{font-style:italic;color:var(--white-60);}
+.case-tags{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-top:24px;
+}
+.case-tag{
+  font-size:8px;letter-spacing:0.15em;
+  color:var(--white-40);text-transform:uppercase;
+  border:0.5px solid var(--white-20);
+  padding:5px 12px;
+}
+.case-intro{
+  font-size:15px;line-height:1.9;
+  color:var(--white-60);font-weight:300;
+  letter-spacing:0.01em;
+}
+
+/* CASE BODY */
+.case-body{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--white-10);
+  border:0.5px solid var(--white-10);
+  margin-bottom:64px;
+}
+.case-section{
+  background:var(--black);
+  padding:40px;
+}
+.case-section-label{
+  font-size:8px;letter-spacing:0.22em;
+  color:var(--white-20);text-transform:uppercase;
+  margin-bottom:20px;
+  padding-bottom:16px;
+  border-bottom:0.5px solid var(--white-10);
+}
+.case-section-text{
+  font-size:13px;line-height:1.9;
+  color:var(--white-60);font-weight:300;
+  letter-spacing:0.01em;
+}
+.case-section-text li{
+  margin-bottom:10px;
+  padding-left:16px;
+  position:relative;
+  list-style:none;
+}
+.case-section-text li::before{
+  content:'—';
+  position:absolute;left:0;
+  color:var(--white-20);
+  font-size:11px;
+}
+
+/* OUTCOMES */
+.case-outcomes{
+  border:0.5px solid var(--white-10);
+  padding:40px;
+  margin-bottom:64px;
+}
+.case-outcomes-label{
+  font-size:8px;letter-spacing:0.22em;
+  color:var(--white-20);text-transform:uppercase;
+  margin-bottom:32px;
+}
+.outcomes-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+.outcome{}
+.outcome-number{
+  font-family:var(--serif);
+  font-size:36px;font-weight:300;
+  color:var(--white);line-height:1;
+  margin-bottom:8px;
+}
+.outcome-label{
+  font-size:8.5px;letter-spacing:0.15em;
+  color:var(--white-40);text-transform:uppercase;
+  line-height:1.6;
+}
+
+/* QUOTE */
+.case-quote{
+  border-left:0.5px solid var(--white-20);
+  padding:0 0 0 32px;
+  margin-bottom:64px;
+}
+.case-quote-text{
+  font-family:var(--serif);
+  font-size:clamp(18px,2.5vw,26px);
+  font-weight:300;font-style:italic;
+  color:var(--white);line-height:1.5;
+  margin-bottom:16px;
+}
+.case-quote-attr{
+  font-size:8.5px;letter-spacing:0.2em;
+  color:var(--white-40);text-transform:uppercase;
+}
+
+/* BETWEEN CASES */
+.case-divider{
+  max-width:1200px;margin:0 auto;
+  padding:0 48px 0;
+  border-bottom:0.5px solid var(--white-10);
+}
+
+/* FOOTER CTA */
+#footer-cta{
+  border-top:0.5px solid var(--white-10);
+  position:relative;overflow:hidden;
+}
+.footer-cta-inner{
+  max-width:1200px;margin:0 auto;
+  padding:120px 48px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:end;gap:48px;
+}
+.footer-cta-title{
+  font-family:var(--serif);
+  font-size:clamp(36px,5vw,72px);
+  font-weight:300;line-height:1.1;
+  color:var(--white);max-width:600px;
+}
+.footer-cta-right{display:flex;flex-direction:column;align-items:flex-end;gap:24px;flex-shrink:0;}
+.footer-meta{
+  font-size:8.5px;letter-spacing:0.18em;
+  color:rgba(255,255,255,0.3);text-transform:uppercase;
+  text-align:right;line-height:2;
+}
+.footer-meta a{color:inherit;text-decoration:none;transition:color 0.2s}
+.footer-meta a:hover{color:var(--white-60)}
+.btn-primary{
+  font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--black);background:var(--white);
+  text-decoration:none;padding:14px 32px;display:inline-block;
+  transition:background 0.2s,color 0.2s;border:0.5px solid var(--white);
+}
+.btn-primary:hover{background:transparent;color:var(--white)}
+
+footer{
+  border-top:0.5px solid var(--white-10);
+  padding:24px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.footer-copy{font-size:8px;letter-spacing:0.15em;color:var(--white-20);text-transform:uppercase;}
+.footer-nav{display:flex;gap:32px}
+.footer-nav a{font-size:8px;letter-spacing:0.15em;color:var(--white-20);text-transform:uppercase;text-decoration:none;transition:color 0.2s;}
+.footer-nav a:hover{color:var(--white-40)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+
+@media(max-width:900px){
+  nav{padding:20px 24px}
+  .nav-links{display:none}
+  #page-header{padding:120px 24px 72px}
+  .case-inner{padding:72px 24px}
+  .case-header{grid-template-columns:1fr;gap:32px}
+  .case-body{grid-template-columns:1fr}
+  .outcomes-grid{grid-template-columns:1fr 1fr}
+  .footer-cta-inner{grid-template-columns:1fr}
+  .footer-cta-right{align-items:flex-start}
+  footer{flex-direction:column;gap:16px;text-align:center;padding:24px}
+}
+@media(max-width:600px){
+  .outcomes-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">N</div>
+    <div class="nav-brand">
+      <span class="nav-name">Nima GTM</span>
+      <span class="nav-descriptor">Revenue Studio</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#offers" class="nav-link">Services</a>
+    <a href="index.html#about" class="nav-link">About</a>
+    <a href="work.html" class="nav-link active">Work</a>
+    <a href="https://calendly.com/alexornima/30min" target="_blank" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section id="page-header">
+  <div class="grid-bg"></div>
+  <p class="page-eyebrow">Selected Work</p>
+  <h1 class="page-title">The engine,<br><em>in motion.</em></h1>
+  <p class="page-sub">Two engagements. Real founders. Real pipeline. Built and run by Nima GTM.</p>
+</section>
+
+<!-- CASE STUDY 1: OKS -->
+<article class="case-study">
+  <div class="case-inner">
+    <div class="case-header">
+      <div class="case-meta">
+        <p class="case-index reveal">01</p>
+        <p class="case-client reveal">OKS · Customer Activation Platform</p>
+        <h2 class="case-title reveal">From instinct<br>to <em>infrastructure.</em></h2>
+        <div class="case-tags reveal reveal-delay-1">
+          <span class="case-tag">Revenue Partner</span>
+          <span class="case-tag">Enterprise Sales</span>
+          <span class="case-tag">Luxury Retail</span>
+          <span class="case-tag">Pipeline Navigation</span>
+        </div>
+      </div>
+      <div class="case-intro reveal reveal-delay-1">
+        <p>Ethan Frajdenrajch had built something real. OKS — a B2B SaaS platform for customer activation — was a genuine product with a genuine market. The problem wasn't the product. It was everything around it.</p>
+        <br>
+        <p>There was no repeatable sales process. No structured outreach. And a growing pipeline of serious opportunities that the founder was navigating entirely alone, closing on instinct with no system behind it.</p>
+        <br>
+        <p>Nima GTM came in as Revenue Partner — not to advise, but to operate.</p>
+      </div>
+    </div>
+
+    <div class="case-body reveal">
+      <div class="case-section">
+        <p class="case-section-label">The situation</p>
+        <ul class="case-section-text">
+          <li>No structured sales process — founder closing on instinct</li>
+          <li>No systematic outreach to the right accounts</li>
+          <li>High-value pipeline with no one to help navigate it</li>
+          <li>Growing interest from premium brands but no commercial infrastructure to handle it</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <p class="case-section-label">What we did</p>
+        <ul class="case-section-text">
+          <li>Rebuilt the sales process and pitch architecture from the ground up</li>
+          <li>Designed a structured outreach motion targeting premium and luxury retail brands</li>
+          <li>Booked and managed meetings with tier-one brand prospects</li>
+          <li>Stood alongside the founder in high-stakes deal navigation and closing moments</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="case-outcomes reveal">
+      <p class="case-outcomes-label">Outcomes</p>
+      <div class="outcomes-grid">
+        <div class="outcome">
+          <p class="outcome-number">6-fig</p>
+          <p class="outcome-label">Pipeline actively<br>in play</p>
+        </div>
+        <div class="outcome">
+          <p class="outcome-number">APM<br><span style="font-size:24px">Monaco</span></p>
+          <p class="outcome-label">Deal closed with<br>luxury brand</p>
+        </div>
+        <div class="outcome">
+          <p class="outcome-number">Ongoing</p>
+          <p class="outcome-label">Embedded Revenue<br>Partner engagement</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-quote reveal">
+      <p class="case-quote-text">"The engine is built. Now we're running it — together."</p>
+      <p class="case-quote-attr">Nima GTM · OKS engagement</p>
+    </div>
+  </div>
+</article>
+
+<!-- CASE STUDY 2: NEXTLEVEL -->
+<article class="case-study">
+  <div class="case-inner">
+    <div class="case-header">
+      <div class="case-meta">
+        <p class="case-index reveal">02</p>
+        <p class="case-client reveal">NextLevel · Agentic Transformation</p>
+        <h2 class="case-title reveal">Everything broken.<br><em>Everything rebuilt.</em></h2>
+        <div class="case-tags reveal reveal-delay-1">
+          <span class="case-tag">Pipeline Sprint</span>
+          <span class="case-tag">SDR Management</span>
+          <span class="case-tag">CRM Enrichment</span>
+          <span class="case-tag">Outbound</span>
+        </div>
+      </div>
+      <div class="case-intro reveal reveal-delay-1">
+        <p>Stan Amsellem's company NextLevel helps tech teams undergo agentic transformation — turning legacy processes into AI-native operations. The offer was strong. The sales motion was not.</p>
+        <br>
+        <p>When Nima GTM came in, the situation was complete: no outbound motion, no follow-up discipline, a CRM that wasn't working, and an ICP that needed sharper definition. There was no single thing to fix. There was everything to fix.</p>
+        <br>
+        <p>So we rebuilt it from zero.</p>
+      </div>
+    </div>
+
+    <div class="case-body reveal">
+      <div class="case-section">
+        <p class="case-section-label">The situation</p>
+        <ul class="case-section-text">
+          <li>No outbound motion — zero systematic prospecting in place</li>
+          <li>No follow-up system — leads going cold with no reactivation process</li>
+          <li>CRM in disarray — no structure, no pipeline visibility</li>
+          <li>ICP not clearly defined — targeting too broad to convert efficiently</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <p class="case-section-label">What we did</p>
+        <ul class="case-section-text">
+          <li>SDR management — day-to-day coaching and accountability of the outbound team</li>
+          <li>Full CRM enrichment on Attio — rebuilt pipeline architecture and contact data</li>
+          <li>Built dormant lead lists and launched structured reactivation campaigns</li>
+          <li>Redefined ICP and outbound targeting to sharpen conversion probability</li>
+          <li>Introduced NextLevel to the LVMH Group — currently in active discussion</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="case-outcomes reveal">
+      <p class="case-outcomes-label">Outcomes</p>
+      <div class="outcomes-grid">
+        <div class="outcome">
+          <p class="outcome-number">Attio</p>
+          <p class="outcome-label">CRM fully rebuilt<br>and enriched</p>
+        </div>
+        <div class="outcome">
+          <p class="outcome-number">LVMH</p>
+          <p class="outcome-label">Group introduced —<br>active discussion</p>
+        </div>
+        <div class="outcome">
+          <p class="outcome-number">Live</p>
+          <p class="outcome-label">Reactivation campaigns<br>running now</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-quote reveal">
+      <p class="case-quote-text">"From no motion to a full outbound engine — and an introduction to LVMH on the table."</p>
+      <p class="case-quote-attr">Nima GTM · NextLevel engagement</p>
+    </div>
+  </div>
+</article>
+
+<!-- FOOTER CTA -->
+<section id="footer-cta">
+  <div class="grid-bg" style="opacity:0.4"></div>
+  <div class="footer-cta-inner">
+    <h2 class="footer-cta-title reveal">Your company.<br><em>Next.</em></h2>
+    <div class="footer-cta-right reveal reveal-delay-2">
+      <a href="https://calendly.com/alexornima/30min" target="_blank" class="btn-primary">Book a 30-min Call</a>
+      <p class="footer-meta">
+        <a href="mailto:alexornima@gmail.com">alexornima@gmail.com</a><br>
+        London · Paris<br>
+        UK & Europe
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-copy">© 2026 Nima GTM · Revenue Studio</p>
+  <nav class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="https://www.linkedin.com/in/alexis-naraghi-510415134/" target="_blank">LinkedIn</a>
+    <a href="https://calendly.com/alexornima/30min" target="_blank">Book a Call</a>
+  </nav>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}
+  });
+},{threshold:0.1});
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
