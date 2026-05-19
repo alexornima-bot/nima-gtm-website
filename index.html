@@ -13,11 +13,16 @@
 :root{
   --black:#000000;
   --white:#ffffff;
+  --white-80:rgba(255,255,255,0.8);
   --white-60:rgba(255,255,255,0.6);
   --white-40:rgba(255,255,255,0.4);
   --white-20:rgba(255,255,255,0.2);
   --white-10:rgba(255,255,255,0.1);
   --white-05:rgba(255,255,255,0.05);
+  /* MODIFIED: warm gold accent — breaks cold white-only palette */
+  --silver:#c0c0c8;
+  --silver-20:rgba(192,192,200,0.2);
+  --silver-10:rgba(192,192,200,0.1);
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Montserrat',sans-serif;
 }
@@ -74,12 +79,12 @@ nav.scrolled{
 .nav-link:hover{color:var(--white)}
 .nav-cta{
   font-size:9px;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--white);text-decoration:none;
-  border:0.5px solid var(--white-40);
+  color:var(--silver);text-decoration:none;
+  border:0.5px solid var(--silver-20);
   padding:10px 22px;
-  transition:background 0.2s,border-color 0.2s;
+  transition:background 0.2s,border-color 0.2s,color 0.2s;
 }
-.nav-cta:hover{background:var(--white);color:var(--black);border-color:var(--white)}
+.nav-cta:hover{background:var(--silver);color:var(--black);border-color:var(--silver)}
 
 /* GRID TEXTURE */
 .grid-bg{
@@ -91,13 +96,27 @@ nav.scrolled{
   pointer-events:none;
 }
 
-/* HERO */
+/* HERO - MODIFIED: added background image with overlay */
 #hero{
   position:relative;
   min-height:100vh;
   display:flex;flex-direction:column;justify-content:center;
   padding:0 48px;
   overflow:hidden;
+}
+.hero-bg-image{
+  position:absolute;inset:0;
+  /* CSS-only cityscape: stacked gradient silhouette */
+  background:
+    linear-gradient(to top, rgba(192,192,200,0.03) 0%, transparent 40%),
+    radial-gradient(ellipse 120% 60% at 70% 100%,rgba(192,192,200,0.04) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-bg-gradient{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 60% 40%, rgba(192,192,200,0.06) 0%, transparent 60%),
+             linear-gradient(to bottom, transparent 50%, var(--black) 100%);
+  pointer-events:none;
 }
 .hero-content{
   position:relative;z-index:2;
@@ -125,9 +144,9 @@ nav.scrolled{
   margin-bottom:56px;
   opacity:0;animation:fadeUp 0.8s 0.6s forwards;
 }
-.hero-rule{width:48px;height:0.5px;background:var(--white-40);flex-shrink:0}
+.hero-rule{width:48px;height:0.5px;background:var(--silver);flex-shrink:0}
 .hero-tagline-text{
-  font-size:10px;letter-spacing:0.22em;color:var(--white-60);
+  font-size:10px;letter-spacing:0.22em;color:var(--white-80);
   text-transform:uppercase;
 }
 .hero-pills{
@@ -136,9 +155,10 @@ nav.scrolled{
   opacity:0;animation:fadeUp 0.8s 0.7s forwards;
 }
 .pill{
-  font-size:8px;letter-spacing:0.18em;color:var(--white-50,rgba(255,255,255,0.5));
+  font-size:8px;letter-spacing:0.18em;color:var(--white-60);
   text-transform:uppercase;
-  border:0.5px solid var(--white-20);
+  border:0.5px solid var(--silver-20);
+  background:var(--silver-10);
   padding:6px 14px;
 }
 .hero-cta-row{
@@ -147,14 +167,14 @@ nav.scrolled{
 }
 .btn-primary{
   font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
-  color:var(--black);background:var(--white);
+  color:var(--black);background:var(--silver);
   text-decoration:none;
   padding:14px 32px;
   display:inline-block;
   transition:background 0.2s,color 0.2s;
-  border:0.5px solid var(--white);
+  border:0.5px solid var(--silver);
 }
-.btn-primary:hover{background:transparent;color:var(--white)}
+.btn-primary:hover{background:transparent;color:var(--silver);border-color:var(--silver)}
 .btn-secondary{
   font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
   color:var(--white-60);
@@ -193,7 +213,7 @@ section{position:relative;overflow:hidden}
 .section-eyebrow::before{
   content:'';display:block;
   width:24px;height:0.5px;
-  background:var(--white-40);
+  background:var(--silver);
 }
 
 /* PROBLEM */
@@ -242,12 +262,22 @@ section{position:relative;overflow:hidden}
   content:'';
   position:absolute;bottom:0;left:0;right:0;
   height:0.5px;
-  background:linear-gradient(90deg,transparent,var(--white-20),transparent);
+  background:linear-gradient(90deg,transparent,var(--silver-20),transparent);
   opacity:0;
   transition:opacity 0.3s;
 }
-.offer-card:hover{background:rgba(255,255,255,0.03)}
+.offer-card:hover{background:rgba(192,192,200,0.03)}
 .offer-card:hover::after{opacity:1}
+/* MODIFIED: offer card icon */
+.offer-icon{
+  width:44px;height:44px;
+  border:0.5px solid var(--silver-20);
+  background:var(--silver-10);
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:28px;
+  flex-shrink:0;
+}
 .offer-num{
   font-family:var(--serif);
   font-size:48px;font-weight:300;
@@ -279,7 +309,7 @@ section{position:relative;overflow:hidden}
 .offer-link{
   margin-top:32px;
   font-size:8.5px;letter-spacing:0.2em;
-  color:var(--white-40);
+  color:var(--silver);
   text-transform:uppercase;
   text-decoration:none;
   display:flex;align-items:center;gap:10px;
@@ -291,6 +321,77 @@ section{position:relative;overflow:hidden}
 
 /* PROOF */
 #proof{border-top:0.5px solid var(--white-10)}
+
+/* MODIFIED: CSS-only city panels — no external images */
+.proof-image-band{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:1px;
+  background:var(--white-10);
+  border:0.5px solid var(--white-10);
+  margin-bottom:1px;
+  overflow:hidden;
+  height:160px;
+}
+.proof-city-wrap{
+  position:relative;overflow:hidden;
+  transition:background 0.4s;
+}
+/* London: dark steel-blue tones, Shard-like spire shape */
+.proof-city--london{
+  background:
+    /* spire */
+    linear-gradient(to bottom, rgba(192,192,200,0.18) 0%, rgba(192,192,200,0.04) 35%, transparent 36%) 48% 0 / 2px 100% no-repeat,
+    /* tall tower L */
+    linear-gradient(to bottom, transparent 28%, rgba(192,192,200,0.08) 28%, rgba(192,192,200,0.08) 100%) 38% 0 / 14% 100% no-repeat,
+    /* tower mid */
+    linear-gradient(to bottom, transparent 42%, rgba(192,192,200,0.07) 42%) 52% 0 / 18% 100% no-repeat,
+    /* tower R */
+    linear-gradient(to bottom, transparent 35%, rgba(192,192,200,0.06) 35%) 68% 0 / 12% 100% no-repeat,
+    /* wide base blocks */
+    linear-gradient(to bottom, transparent 55%, rgba(192,192,200,0.05) 55%) 20% 0 / 60% 100% no-repeat,
+    /* ground glow */
+    radial-gradient(ellipse 80% 30% at 50% 100%, rgba(192,192,200,0.06) 0%, transparent 70%),
+    #090910;
+}
+/* Paris: warm-grey, Eiffel silhouette hinted */
+.proof-city--paris{
+  background:
+    /* Eiffel tip */
+    linear-gradient(to bottom, rgba(192,192,200,0.22) 0%, rgba(192,192,200,0.22) 5%, transparent 6%) 50% 0 / 1px 100% no-repeat,
+    /* Eiffel body taper */
+    linear-gradient(to bottom, transparent 5%, rgba(192,192,200,0.09) 5%, rgba(192,192,200,0.05) 48%, transparent 49%) 47% 0 / 8% 100% no-repeat,
+    /* Haussmann blocks L */
+    linear-gradient(to bottom, transparent 38%, rgba(192,192,200,0.07) 38%) 18% 0 / 22% 100% no-repeat,
+    linear-gradient(to bottom, transparent 44%, rgba(192,192,200,0.06) 44%) 36% 0 / 10% 100% no-repeat,
+    /* Haussmann blocks R */
+    linear-gradient(to bottom, transparent 40%, rgba(192,192,200,0.07) 40%) 60% 0 / 20% 100% no-repeat,
+    linear-gradient(to bottom, transparent 47%, rgba(192,192,200,0.05) 47%) 78% 0 / 14% 100% no-repeat,
+    radial-gradient(ellipse 70% 25% at 50% 100%, rgba(192,192,200,0.05) 0%, transparent 70%),
+    #0a0a0d;
+}
+/* Southern Europe: warmer dark, lower dense skyline */
+.proof-city--europe{
+  background:
+    /* wide dense low city */
+    linear-gradient(to bottom, transparent 48%, rgba(192,192,200,0.07) 48%) 0 0 / 100% 100% no-repeat,
+    /* taller anchors */
+    linear-gradient(to bottom, transparent 32%, rgba(192,192,200,0.09) 32%) 22% 0 / 10% 100% no-repeat,
+    linear-gradient(to bottom, transparent 38%, rgba(192,192,200,0.08) 38%) 42% 0 / 16% 100% no-repeat,
+    linear-gradient(to bottom, transparent 28%, rgba(192,192,200,0.1) 28%) 62% 0 / 8% 100% no-repeat,
+    linear-gradient(to bottom, transparent 42%, rgba(192,192,200,0.07) 42%) 75% 0 / 18% 100% no-repeat,
+    radial-gradient(ellipse 90% 35% at 50% 100%, rgba(192,192,200,0.04) 0%, transparent 70%),
+    #0c0c0a;
+}
+.proof-city-wrap:hover .proof-city--london,
+.proof-city-wrap:hover .proof-city--paris,
+.proof-city-wrap:hover .proof-city--europe{ filter:brightness(1.4) }
+.proof-city-label{
+  position:absolute;bottom:14px;left:18px;
+  font-size:7.5px;letter-spacing:0.22em;
+  color:var(--white-60);text-transform:uppercase;
+  font-family:var(--sans);
+}
 .proof-stats{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:1px;background:var(--white-10);
@@ -304,7 +405,7 @@ section{position:relative;overflow:hidden}
 .stat-number{
   font-family:var(--serif);
   font-size:clamp(36px,4vw,56px);
-  font-weight:300;color:var(--white);
+  font-weight:300;color:var(--silver);
   line-height:1;margin-bottom:10px;
 }
 .stat-label{
@@ -324,13 +425,13 @@ section{position:relative;overflow:hidden}
   padding:18px 28px;
   border-right:0.5px solid var(--white-10);
   font-size:10px;letter-spacing:0.15em;
-  color:var(--white-40);text-transform:uppercase;
+  color:var(--white-60);text-transform:uppercase;
   transition:color 0.2s;
   white-space:nowrap;
 }
 .proof-logo-item:last-child{border-right:none}
-.proof-logo-item:hover{color:var(--white-80,rgba(255,255,255,0.8))}
-.proof-logo-item.current{color:var(--white-60)}
+.proof-logo-item:hover{color:var(--white)}
+.proof-logo-item.current{color:var(--silver)}
 
 /* ABOUT */
 #about{border-top:0.5px solid var(--white-10)}
@@ -510,6 +611,8 @@ footer{
 <!-- HERO -->
 <section id="hero">
   <div class="grid-bg"></div>
+  <div class="hero-bg-image"></div>
+  <div class="hero-bg-gradient"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Revenue Studio · London & Paris</p>
     <h1 class="hero-title">Nima<br>GTM</h1>
@@ -535,13 +638,13 @@ footer{
 <!-- PROBLEM -->
 <section id="problem">
   <div class="section-inner">
-    <p class="section-eyebrow reveal">The Problem</p>
+    <p class="section-eyebrow reveal">The Opportunity</p>
     <p class="problem-text reveal reveal-delay-1">
-      Most B2B founders build a great product.<br>
-      <em>Few build the sales engine to sell it.</em>
+      Great products deserve great sales engines.<br>
+      <em>We build the one you haven't had time to build.</em>
     </p>
     <p class="problem-sub reveal reveal-delay-2">
-      Hiring a VP of Sales feels too early. Generic agencies feel too removed. And doing it alone means the pipeline stalls while the product waits. There is a better way — an embedded partner who builds the engine and runs it alongside you.
+      Most founders are brilliant at product — and stretched thin on go-to-market. We step in as an embedded partner: building your outbound engine, sharpening your positioning, and running the motion week by week until the pipeline flows.
     </p>
   </div>
 </section>
@@ -552,6 +655,14 @@ footer{
     <p class="section-eyebrow reveal">How We Work</p>
     <div class="offers-grid">
       <div class="offer-card reveal reveal-delay-1">
+        <div class="offer-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="9" r="5.5" stroke="#c0c0c8" stroke-width="0.75"/>
+            <line x1="13.5" y1="13.5" x2="17" y2="17" stroke="#c0c0c8" stroke-width="0.75" stroke-linecap="round"/>
+            <line x1="6.5" y1="9" x2="11.5" y2="9" stroke="#c0c0c8" stroke-width="0.75"/>
+            <line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#c0c0c8" stroke-width="0.75"/>
+          </svg>
+        </div>
         <div class="offer-num">01</div>
         <h3 class="offer-title">GTM Audit</h3>
         <p class="offer-duration">Two weeks · Flat fee</p>
@@ -561,20 +672,34 @@ footer{
         <a href="https://calendly.com/alexornima/30min" target="_blank" class="offer-link">Start with an audit</a>
       </div>
       <div class="offer-card reveal reveal-delay-2">
+        <div class="offer-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="3,14 7,9 11,12 17,5" stroke="#c0c0c8" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="14" y1="5" x2="17" y2="5" stroke="#c0c0c8" stroke-width="0.75"/>
+            <line x1="17" y1="5" x2="17" y2="8" stroke="#c0c0c8" stroke-width="0.75"/>
+          </svg>
+        </div>
         <div class="offer-num">02</div>
         <h3 class="offer-title">Pipeline Sprint</h3>
         <p class="offer-duration">Three months · Retainer</p>
         <p class="offer-desc">
-          We build your outbound engine from zero. ICP definition, sequence copywriting, toolstack setup, SDR coaching, and weekly pipeline reporting. Then we run it — managing the motion week by week until the machine works without us.
+          We build your outbound engine from scratch — ICP, sequences, toolstack, SDR coaching, weekly reporting — then run it alongside you until the pipeline moves consistently on its own.
         </p>
         <a href="https://calendly.com/alexornima/30min" target="_blank" class="offer-link">Build the engine</a>
       </div>
       <div class="offer-card reveal reveal-delay-3">
+        <div class="offer-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="7" width="14" height="10" rx="1" stroke="#c0c0c8" stroke-width="0.75"/>
+            <path d="M7 7V5.5A3 3 0 0 1 13 5.5V7" stroke="#c0c0c8" stroke-width="0.75" stroke-linecap="round"/>
+            <circle cx="10" cy="12" r="1.5" stroke="#c0c0c8" stroke-width="0.75"/>
+          </svg>
+        </div>
         <div class="offer-num">03</div>
         <h3 class="offer-title">Revenue Partner</h3>
         <p class="offer-duration">Ongoing · Minimum 3 months</p>
         <p class="offer-desc">
-          We become your embedded sales team. We own the pipeline, coach your team, design the strategy, and step in to close when it matters. The full commercial infrastructure — without the overhead of a full-time hire.
+          We become your embedded commercial team — owning pipeline, coaching your people, closing deals where it counts. Full GTM infrastructure, without a full-time hire.
         </p>
         <a href="https://calendly.com/alexornima/30min" target="_blank" class="offer-link">Become a partner</a>
       </div>
@@ -586,6 +711,18 @@ footer{
 <section id="proof">
   <div class="section-inner">
     <p class="section-eyebrow reveal">Track Record</p>
+    <!-- MODIFIED: city image band for visual atmosphere -->
+    <div class="proof-image-band reveal">
+      <div class="proof-city-wrap proof-city--london">
+        <span class="proof-city-label">London</span>
+      </div>
+      <div class="proof-city-wrap proof-city--paris">
+        <span class="proof-city-label">Paris</span>
+      </div>
+      <div class="proof-city-wrap proof-city--europe">
+        <span class="proof-city-label">Southern Europe</span>
+      </div>
+    </div>
     <div class="proof-stats">
       <div class="stat reveal reveal-delay-1">
         <p class="stat-number">£1M+</p>
@@ -664,7 +801,7 @@ footer{
 <section id="footer-cta">
   <div class="grid-bg" style="opacity:0.4"></div>
   <div class="footer-cta-inner">
-    <h2 class="footer-cta-title reveal">Ready to build your<br><em>sales engine?</em></h2>
+    <h2 class="footer-cta-title reveal">Your next revenue milestone<br><em>starts with a conversation.</em></h2>
     <div class="footer-cta-right reveal reveal-delay-2">
       <a href="https://calendly.com/alexornima/30min" target="_blank" class="btn-primary">Book a 30-min Call</a>
       <p class="footer-meta">
