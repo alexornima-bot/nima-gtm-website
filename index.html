@@ -13,11 +13,15 @@
 :root{
   --black:#000000;
   --white:#ffffff;
+  --white-80:rgba(255,255,255,0.8);
   --white-60:rgba(255,255,255,0.6);
   --white-40:rgba(255,255,255,0.4);
   --white-20:rgba(255,255,255,0.2);
   --white-10:rgba(255,255,255,0.1);
   --white-05:rgba(255,255,255,0.05);
+  --silver:#c0c0c8;
+  --silver-20:rgba(192,192,200,0.2);
+  --silver-10:rgba(192,192,200,0.1);
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Montserrat',sans-serif;
 }
@@ -60,26 +64,20 @@ nav.scrolled{
   border-radius:6px;
   flex-shrink:0;
 }
-.nav-brand{
-  display:flex;flex-direction:column;gap:1px;
-}
+.nav-brand{display:flex;flex-direction:column;gap:1px;}
 .nav-name{font-family:var(--serif);font-size:17px;font-weight:400;color:var(--white);letter-spacing:0.02em;line-height:1}
 .nav-descriptor{font-size:7.5px;letter-spacing:0.22em;color:var(--white-40);text-transform:uppercase;line-height:1}
 .nav-links{display:flex;align-items:center;gap:40px}
-.nav-link{
-  font-size:9px;letter-spacing:0.2em;color:var(--white-60);
-  text-decoration:none;text-transform:uppercase;
-  transition:color 0.2s;
-}
+.nav-link{font-size:9px;letter-spacing:0.2em;color:var(--white-60);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
 .nav-link:hover{color:var(--white)}
 .nav-cta{
   font-size:9px;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--white);text-decoration:none;
-  border:0.5px solid var(--white-40);
+  color:var(--silver);text-decoration:none;
+  border:0.5px solid var(--silver-20);
   padding:10px 22px;
-  transition:background 0.2s,border-color 0.2s;
+  transition:background 0.2s,border-color 0.2s,color 0.2s;
 }
-.nav-cta:hover{background:var(--white);color:var(--black);border-color:var(--white)}
+.nav-cta:hover{background:var(--silver);color:var(--black);border-color:var(--silver)}
 
 /* GRID TEXTURE */
 .grid-bg{
@@ -98,6 +96,13 @@ nav.scrolled{
   display:flex;flex-direction:column;justify-content:center;
   padding:0 48px;
   overflow:hidden;
+}
+.hero-atmosphere{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 50% at 65% 60%, rgba(192,192,200,0.05) 0%, transparent 65%),
+    linear-gradient(to bottom, transparent 60%, var(--black) 100%);
+  pointer-events:none;
 }
 .hero-content{
   position:relative;z-index:2;
@@ -125,20 +130,18 @@ nav.scrolled{
   margin-bottom:56px;
   opacity:0;animation:fadeUp 0.8s 0.6s forwards;
 }
-.hero-rule{width:48px;height:0.5px;background:var(--white-40);flex-shrink:0}
-.hero-tagline-text{
-  font-size:10px;letter-spacing:0.22em;color:var(--white-60);
-  text-transform:uppercase;
-}
+.hero-rule{width:48px;height:0.5px;background:var(--silver);flex-shrink:0}
+.hero-tagline-text{font-size:10px;letter-spacing:0.22em;color:var(--white-80);text-transform:uppercase;}
 .hero-pills{
   display:flex;gap:10px;flex-wrap:wrap;
   margin-bottom:56px;
   opacity:0;animation:fadeUp 0.8s 0.7s forwards;
 }
 .pill{
-  font-size:8px;letter-spacing:0.18em;color:var(--white-50,rgba(255,255,255,0.5));
+  font-size:8px;letter-spacing:0.18em;color:var(--white-60);
   text-transform:uppercase;
-  border:0.5px solid var(--white-20);
+  border:0.5px solid var(--silver-20);
+  background:var(--silver-10);
   padding:6px 14px;
 }
 .hero-cta-row{
@@ -147,14 +150,14 @@ nav.scrolled{
 }
 .btn-primary{
   font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
-  color:var(--black);background:var(--white);
+  color:var(--black);background:var(--silver);
   text-decoration:none;
   padding:14px 32px;
   display:inline-block;
-  transition:background 0.2s,color 0.2s;
-  border:0.5px solid var(--white);
+  transition:background 0.2s,color 0.2s,border-color 0.2s;
+  border:0.5px solid var(--silver);
 }
-.btn-primary:hover{background:transparent;color:var(--white)}
+.btn-primary:hover{background:transparent;color:var(--silver);border-color:var(--silver)}
 .btn-secondary{
   font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
   color:var(--white-60);
@@ -180,10 +183,7 @@ nav.scrolled{
 
 /* SECTION BASE */
 section{position:relative;overflow:hidden}
-.section-inner{
-  max-width:1200px;margin:0 auto;
-  padding:120px 48px;
-}
+.section-inner{max-width:1200px;margin:0 auto;padding:120px 48px;}
 .section-eyebrow{
   font-size:8.5px;letter-spacing:0.28em;color:var(--white-40);
   text-transform:uppercase;
@@ -193,7 +193,7 @@ section{position:relative;overflow:hidden}
 .section-eyebrow::before{
   content:'';display:block;
   width:24px;height:0.5px;
-  background:var(--white-40);
+  background:var(--silver);
 }
 
 /* PROBLEM */
@@ -206,27 +206,19 @@ section{position:relative;overflow:hidden}
   color:var(--white);
   max-width:800px;
 }
-.problem-text em{
-  font-style:italic;
-  color:var(--white-60);
-}
+.problem-text em{font-style:italic;color:var(--white-60);}
 .problem-sub{
   margin-top:40px;
-  font-size:13px;
-  line-height:1.8;
+  font-size:13px;line-height:1.8;
   color:var(--white-60);
-  max-width:560px;
-  font-weight:300;
-  letter-spacing:0.02em;
+  max-width:560px;font-weight:300;letter-spacing:0.02em;
 }
 
 /* OFFERS */
 #offers{border-top:0.5px solid var(--white-10)}
 .offers-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1px;
-  background:var(--white-10);
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--white-10);
   border:0.5px solid var(--white-10);
   margin-top:64px;
 }
@@ -235,53 +227,52 @@ section{position:relative;overflow:hidden}
   padding:48px 40px;
   display:flex;flex-direction:column;
   transition:background 0.3s;
-  position:relative;
-  overflow:hidden;
+  position:relative;overflow:hidden;
 }
 .offer-card::after{
   content:'';
   position:absolute;bottom:0;left:0;right:0;
   height:0.5px;
-  background:linear-gradient(90deg,transparent,var(--white-20),transparent);
-  opacity:0;
-  transition:opacity 0.3s;
+  background:linear-gradient(90deg,transparent,var(--silver-20),transparent);
+  opacity:0;transition:opacity 0.3s;
 }
-.offer-card:hover{background:rgba(255,255,255,0.03)}
+.offer-card:hover{background:rgba(192,192,200,0.03)}
 .offer-card:hover::after{opacity:1}
+.offer-icon{
+  width:44px;height:44px;
+  border:0.5px solid var(--silver-20);
+  background:var(--silver-10);
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:28px;flex-shrink:0;
+}
 .offer-num{
   font-family:var(--serif);
   font-size:48px;font-weight:300;
   color:rgba(255,255,255,0.08);
-  line-height:1;
-  margin-bottom:24px;
+  line-height:1;margin-bottom:24px;
 }
 .offer-title{
   font-family:var(--serif);
   font-size:28px;font-weight:400;
   color:var(--white);
-  margin-bottom:16px;
-  line-height:1.1;
+  margin-bottom:16px;line-height:1.1;
 }
 .offer-duration{
   font-size:8px;letter-spacing:0.2em;color:var(--white-40);
   text-transform:uppercase;
-  margin-bottom:24px;
-  padding-bottom:24px;
+  margin-bottom:24px;padding-bottom:24px;
   border-bottom:0.5px solid var(--white-10);
 }
 .offer-desc{
   font-size:13px;line-height:1.8;
-  color:var(--white-60);
-  font-weight:300;
-  letter-spacing:0.01em;
-  flex:1;
+  color:var(--white-60);font-weight:300;
+  letter-spacing:0.01em;flex:1;
 }
 .offer-link{
-  margin-top:32px;
-  font-size:8.5px;letter-spacing:0.2em;
-  color:var(--white-40);
-  text-transform:uppercase;
-  text-decoration:none;
+  margin-top:32px;font-size:8.5px;letter-spacing:0.2em;
+  color:var(--silver);
+  text-transform:uppercase;text-decoration:none;
   display:flex;align-items:center;gap:10px;
   transition:color 0.2s;
 }
@@ -291,20 +282,68 @@ section{position:relative;overflow:hidden}
 
 /* PROOF */
 #proof{border-top:0.5px solid var(--white-10)}
+
+/* City panels — pure CSS, no external images */
+.proof-city-band{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:1px;background:var(--white-10);
+  border:0.5px solid var(--white-10);
+  margin-bottom:1px;height:160px;overflow:hidden;
+}
+.proof-city{
+  position:relative;overflow:hidden;
+  transition:filter 0.4s;
+}
+.proof-city--london{
+  background:
+    linear-gradient(to bottom,rgba(192,192,200,0.20) 0%,rgba(192,192,200,0.20) 4%,transparent 5%) 48.5% 0/1.5px 100% no-repeat,
+    linear-gradient(to bottom,transparent 28%,rgba(192,192,200,0.09) 28%) 36% 0/16% 100% no-repeat,
+    linear-gradient(to bottom,transparent 40%,rgba(192,192,200,0.07) 40%) 50% 0/20% 100% no-repeat,
+    linear-gradient(to bottom,transparent 34%,rgba(192,192,200,0.06) 34%) 68% 0/13% 100% no-repeat,
+    linear-gradient(to bottom,transparent 54%,rgba(192,192,200,0.05) 54%) 18% 0/62% 100% no-repeat,
+    radial-gradient(ellipse 80% 30% at 50% 100%,rgba(192,192,200,0.06) 0%,transparent 70%),
+    #090910;
+}
+.proof-city--paris{
+  background:
+    linear-gradient(to bottom,rgba(192,192,200,0.24) 0%,rgba(192,192,200,0.24) 4%,transparent 5%) 50% 0/1px 100% no-repeat,
+    linear-gradient(to bottom,transparent 5%,rgba(192,192,200,0.08) 5%,rgba(192,192,200,0.04) 47%,transparent 48%) 47% 0/9% 100% no-repeat,
+    linear-gradient(to bottom,transparent 37%,rgba(192,192,200,0.07) 37%) 17% 0/23% 100% no-repeat,
+    linear-gradient(to bottom,transparent 43%,rgba(192,192,200,0.06) 43%) 35% 0/11% 100% no-repeat,
+    linear-gradient(to bottom,transparent 39%,rgba(192,192,200,0.07) 39%) 59% 0/21% 100% no-repeat,
+    linear-gradient(to bottom,transparent 46%,rgba(192,192,200,0.05) 46%) 78% 0/15% 100% no-repeat,
+    radial-gradient(ellipse 70% 25% at 50% 100%,rgba(192,192,200,0.05) 0%,transparent 70%),
+    #0a0a0d;
+}
+.proof-city--europe{
+  background:
+    linear-gradient(to bottom,transparent 47%,rgba(192,192,200,0.06) 47%) 0 0/100% 100% no-repeat,
+    linear-gradient(to bottom,transparent 31%,rgba(192,192,200,0.09) 31%) 22% 0/11% 100% no-repeat,
+    linear-gradient(to bottom,transparent 37%,rgba(192,192,200,0.08) 37%) 42% 0/17% 100% no-repeat,
+    linear-gradient(to bottom,transparent 27%,rgba(192,192,200,0.10) 27%) 62% 0/9% 100% no-repeat,
+    linear-gradient(to bottom,transparent 41%,rgba(192,192,200,0.07) 41%) 75% 0/19% 100% no-repeat,
+    radial-gradient(ellipse 90% 35% at 50% 100%,rgba(192,192,200,0.04) 0%,transparent 70%),
+    #0c0c0a;
+}
+.proof-city:hover{filter:brightness(1.5)}
+.proof-city-label{
+  position:absolute;bottom:14px;left:18px;
+  font-size:7.5px;letter-spacing:0.22em;
+  color:var(--white-60);text-transform:uppercase;
+  font-family:var(--sans);
+}
+
 .proof-stats{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:1px;background:var(--white-10);
   border:0.5px solid var(--white-10);
   margin-bottom:80px;
 }
-.stat{
-  background:var(--black);
-  padding:40px;
-}
+.stat{background:var(--black);padding:40px;}
 .stat-number{
   font-family:var(--serif);
   font-size:clamp(36px,4vw,56px);
-  font-weight:300;color:var(--white);
+  font-weight:300;color:var(--silver);
   line-height:1;margin-bottom:10px;
 }
 .stat-label{
@@ -324,32 +363,24 @@ section{position:relative;overflow:hidden}
   padding:18px 28px;
   border-right:0.5px solid var(--white-10);
   font-size:10px;letter-spacing:0.15em;
-  color:var(--white-40);text-transform:uppercase;
-  transition:color 0.2s;
-  white-space:nowrap;
+  color:var(--white-60);text-transform:uppercase;
+  transition:color 0.2s;white-space:nowrap;
 }
 .proof-logo-item:last-child{border-right:none}
-.proof-logo-item:hover{color:var(--white-80,rgba(255,255,255,0.8))}
-.proof-logo-item.current{color:var(--white-60)}
+.proof-logo-item:hover{color:var(--white)}
+.proof-logo-item.current{color:var(--silver)}
 
 /* ABOUT */
 #about{border-top:0.5px solid var(--white-10)}
 .about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:start;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:start;
 }
-.about-photo-wrap{
-  position:relative;
-}
+.about-photo-wrap{position:relative;}
 .about-photo{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  object-position:center top;
-  display:block;
-  filter:grayscale(15%);
+  width:100%;aspect-ratio:1/1;
+  object-fit:cover;object-position:center top;
+  display:block;filter:grayscale(15%);
 }
 .about-photo-caption{
   position:absolute;bottom:0;left:0;right:0;
@@ -363,66 +394,50 @@ section{position:relative;overflow:hidden}
   font-family:var(--serif);
   font-size:clamp(32px,4vw,52px);
   font-weight:300;line-height:1.1;
-  color:var(--white);
-  margin-bottom:32px;
+  color:var(--white);margin-bottom:32px;
 }
 .about-text{
   font-size:14px;line-height:1.9;
-  color:var(--white-60);
-  font-weight:300;
-  letter-spacing:0.01em;
-  margin-bottom:20px;
+  color:var(--white-60);font-weight:300;
+  letter-spacing:0.01em;margin-bottom:20px;
 }
 .about-langs{
-  margin-top:40px;
-  padding-top:32px;
+  margin-top:40px;padding-top:32px;
   border-top:0.5px solid var(--white-10);
 }
 .about-langs-label{
   font-size:8px;letter-spacing:0.22em;color:var(--white-20);
   text-transform:uppercase;margin-bottom:16px;
 }
-.about-langs-list{
-  display:flex;flex-wrap:wrap;gap:8px;
-}
+.about-langs-list{display:flex;flex-wrap:wrap;gap:8px;}
 .lang-tag{
   font-size:8.5px;letter-spacing:0.15em;
   color:var(--white-60);text-transform:uppercase;
-  border:0.5px solid var(--white-20);
-  padding:6px 14px;
+  border:0.5px solid var(--white-20);padding:6px 14px;
 }
 
 /* FOOTER CTA */
-#footer-cta{
-  border-top:0.5px solid var(--white-10);
-  position:relative;overflow:hidden;
-}
+#footer-cta{border-top:0.5px solid var(--white-10);position:relative;overflow:hidden;}
 .footer-cta-inner{
   max-width:1200px;margin:0 auto;
   padding:120px 48px;
-  display:grid;
-  grid-template-columns:1fr auto;
-  align-items:end;
-  gap:48px;
+  display:grid;grid-template-columns:1fr auto;
+  align-items:end;gap:48px;
 }
 .footer-cta-title{
   font-family:var(--serif);
   font-size:clamp(36px,5vw,72px);
   font-weight:300;line-height:1.1;
-  color:var(--white);
-  max-width:600px;
+  color:var(--white);max-width:600px;
 }
 .footer-cta-right{
   display:flex;flex-direction:column;
-  align-items:flex-end;gap:24px;
-  flex-shrink:0;
+  align-items:flex-end;gap:24px;flex-shrink:0;
 }
 .footer-meta{
   font-size:8.5px;letter-spacing:0.18em;
-  color:var(--white-30,rgba(255,255,255,0.3));
-  text-transform:uppercase;
-  text-align:right;
-  line-height:2;
+  color:rgba(255,255,255,0.3);
+  text-transform:uppercase;text-align:right;line-height:2;
 }
 .footer-meta a{color:inherit;text-decoration:none;transition:color 0.2s}
 .footer-meta a:hover{color:var(--white-60)}
@@ -433,10 +448,7 @@ footer{
   padding:24px 48px;
   display:flex;align-items:center;justify-content:space-between;
 }
-.footer-copy{
-  font-size:8px;letter-spacing:0.15em;
-  color:var(--white-20);text-transform:uppercase;
-}
+.footer-copy{font-size:8px;letter-spacing:0.15em;color:var(--white-20);text-transform:uppercase;}
 .footer-nav{display:flex;gap:32px}
 .footer-nav a{
   font-size:8px;letter-spacing:0.15em;
@@ -474,6 +486,8 @@ footer{
   .hero-title{font-size:clamp(52px,12vw,80px)}
   .offers-grid{grid-template-columns:1fr}
   .proof-stats{grid-template-columns:1fr 1fr}
+  .proof-city-band{grid-template-columns:1fr;height:auto}
+  .proof-city{height:100px}
   .about-grid{grid-template-columns:1fr;gap:40px}
   .footer-cta-inner{grid-template-columns:1fr;}
   .footer-cta-right{align-items:flex-start}
@@ -510,6 +524,7 @@ footer{
 <!-- HERO -->
 <section id="hero">
   <div class="grid-bg"></div>
+  <div class="hero-atmosphere"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Revenue Studio · London & Paris</p>
     <h1 class="hero-title">Nima<br>GTM</h1>
@@ -535,13 +550,13 @@ footer{
 <!-- PROBLEM -->
 <section id="problem">
   <div class="section-inner">
-    <p class="section-eyebrow reveal">The Problem</p>
+    <p class="section-eyebrow reveal">The Opportunity</p>
     <p class="problem-text reveal reveal-delay-1">
-      Most B2B founders build a great product.<br>
-      <em>Few build the sales engine to sell it.</em>
+      Great products deserve great sales engines.<br>
+      <em>We build the one you haven't had time to build.</em>
     </p>
     <p class="problem-sub reveal reveal-delay-2">
-      Hiring a VP of Sales feels too early. Generic agencies feel too removed. And doing it alone means the pipeline stalls while the product waits. There is a better way — an embedded partner who builds the engine and runs it alongside you.
+      Most founders are brilliant at product — and stretched thin on go-to-market. We step in as an embedded partner: building your outbound engine, sharpening your positioning, and running the motion week by week until the pipeline flows.
     </p>
   </div>
 </section>
@@ -551,7 +566,16 @@ footer{
   <div class="section-inner">
     <p class="section-eyebrow reveal">How We Work</p>
     <div class="offers-grid">
+
       <div class="offer-card reveal reveal-delay-1">
+        <div class="offer-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="9" r="5.5" stroke="#c0c0c8" stroke-width="0.75"/>
+            <line x1="13.5" y1="13.5" x2="17" y2="17" stroke="#c0c0c8" stroke-width="0.75" stroke-linecap="round"/>
+            <line x1="6.5" y1="9" x2="11.5" y2="9" stroke="#c0c0c8" stroke-width="0.75"/>
+            <line x1="9" y1="6.5" x2="9" y2="11.5" stroke="#c0c0c8" stroke-width="0.75"/>
+          </svg>
+        </div>
         <div class="offer-num">01</div>
         <h3 class="offer-title">GTM Audit</h3>
         <p class="offer-duration">Two weeks · Flat fee</p>
@@ -560,24 +584,41 @@ footer{
         </p>
         <a href="https://calendly.com/alexornima/30min" target="_blank" class="offer-link">Start with an audit</a>
       </div>
+
       <div class="offer-card reveal reveal-delay-2">
+        <div class="offer-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="3,14 7,9 11,12 17,5" stroke="#c0c0c8" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="14" y1="5" x2="17" y2="5" stroke="#c0c0c8" stroke-width="0.75"/>
+            <line x1="17" y1="5" x2="17" y2="8" stroke="#c0c0c8" stroke-width="0.75"/>
+          </svg>
+        </div>
         <div class="offer-num">02</div>
         <h3 class="offer-title">Pipeline Sprint</h3>
         <p class="offer-duration">Three months · Retainer</p>
         <p class="offer-desc">
-          We build your outbound engine from zero. ICP definition, sequence copywriting, toolstack setup, SDR coaching, and weekly pipeline reporting. Then we run it — managing the motion week by week until the machine works without us.
+          We build your outbound engine from scratch — ICP, sequences, toolstack, SDR coaching, weekly reporting — then run it alongside you until the pipeline moves consistently on its own.
         </p>
         <a href="https://calendly.com/alexornima/30min" target="_blank" class="offer-link">Build the engine</a>
       </div>
+
       <div class="offer-card reveal reveal-delay-3">
+        <div class="offer-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="7" width="14" height="10" rx="1" stroke="#c0c0c8" stroke-width="0.75"/>
+            <path d="M7 7V5.5A3 3 0 0 1 13 5.5V7" stroke="#c0c0c8" stroke-width="0.75" stroke-linecap="round"/>
+            <circle cx="10" cy="12" r="1.5" stroke="#c0c0c8" stroke-width="0.75"/>
+          </svg>
+        </div>
         <div class="offer-num">03</div>
         <h3 class="offer-title">Revenue Partner</h3>
         <p class="offer-duration">Ongoing · Minimum 3 months</p>
         <p class="offer-desc">
-          We become your embedded sales team. We own the pipeline, coach your team, design the strategy, and step in to close when it matters. The full commercial infrastructure — without the overhead of a full-time hire.
+          We become your embedded commercial team — owning pipeline, coaching your people, closing deals where it counts. Full GTM infrastructure, without a full-time hire.
         </p>
         <a href="https://calendly.com/alexornima/30min" target="_blank" class="offer-link">Become a partner</a>
       </div>
+
     </div>
   </div>
 </section>
@@ -586,6 +627,20 @@ footer{
 <section id="proof">
   <div class="section-inner">
     <p class="section-eyebrow reveal">Track Record</p>
+
+    <!-- CSS-only city panels — no external images -->
+    <div class="proof-city-band reveal">
+      <div class="proof-city proof-city--london">
+        <span class="proof-city-label">London</span>
+      </div>
+      <div class="proof-city proof-city--paris">
+        <span class="proof-city-label">Paris</span>
+      </div>
+      <div class="proof-city proof-city--europe">
+        <span class="proof-city-label">Southern Europe</span>
+      </div>
+    </div>
+
     <div class="proof-stats">
       <div class="stat reveal reveal-delay-1">
         <p class="stat-number">£1M+</p>
@@ -664,7 +719,7 @@ footer{
 <section id="footer-cta">
   <div class="grid-bg" style="opacity:0.4"></div>
   <div class="footer-cta-inner">
-    <h2 class="footer-cta-title reveal">Ready to build your<br><em>sales engine?</em></h2>
+    <h2 class="footer-cta-title reveal">Your next revenue milestone<br><em>starts with a conversation.</em></h2>
     <div class="footer-cta-right reveal reveal-delay-2">
       <a href="https://calendly.com/alexornima/30min" target="_blank" class="btn-primary">Book a 30-min Call</a>
       <p class="footer-meta">
@@ -688,13 +743,11 @@ footer{
 </footer>
 
 <script>
-// NAV SCROLL
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// SCROLL REVEAL
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -706,7 +759,6 @@ const observer = new IntersectionObserver((entries) => {
 }, {threshold: 0.12});
 reveals.forEach(el => observer.observe(el));
 
-// SMOOTH ANCHOR SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
