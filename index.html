@@ -397,6 +397,8 @@ section{position:relative}
 }
 .proof-logo-item:hover{color:var(--ink);border-color:var(--hairline-strong)}
 .proof-logo-item.current{color:var(--ink);border-color:var(--hairline-strong)}
+/* MODIFIED: current/past marker inside client chips */
+.proof-logo-note{font-weight:400;color:var(--ink-subtle);margin-left:6px}
 
 /* ABOUT — MODIFIED: photo framed as a panel; 5/7 split */
 #about{border-top:1px solid var(--hairline)}
@@ -733,10 +735,10 @@ footer{
     </div>
     </div>
     <div class="proof-group">
-    <p class="proof-logos-label reveal">Current clients</p>
+    <p class="proof-logos-label reveal">Clients</p>
     <div class="proof-logos reveal reveal-delay-1">
-      <span class="proof-logo-item current">OKS</span>
-      <span class="proof-logo-item current">NextLevel</span>
+      <span class="proof-logo-item current">OKS<span class="proof-logo-note">Current</span></span>
+      <span class="proof-logo-item">NextLevel<span class="proof-logo-note">Past</span></span>
     </div>
     </div>
     <div class="proof-group">
@@ -796,7 +798,7 @@ footer{
     <div class="footer-cta-right reveal reveal-delay-2">
       <a href="https://calendly.com/alexornima/30min" target="_blank" rel="noopener" class="btn-primary">Book a 30-min Call</a>
       <p class="footer-meta">
-        <a href="mailto:alexornima@gmail.com">alexornima@gmail.com</a><br>
+        <a href="mailto:alex@nimagtm.com">alex@nimagtm.com</a><br>
         UK & Europe
       </p>
     </div>
