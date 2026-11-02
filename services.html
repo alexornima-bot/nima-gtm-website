@@ -2,589 +2,160 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#050506">
 <meta name="description" content="Nima GTM · Services. GTM Audit, Pipeline Sprint, and Revenue Partner — three ways to build and run your sales engine.">
 <title>Services · Nima GTM · Revenue Studio</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-/* MODIFIED: Linear-inspired restyle (2026-10-22). Near-black canvas, charcoal surface ladder,
-   hairline borders, tight 4px-based spacing. Monochrome only; Cormorant Garamond + Montserrat kept. */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  /* Surfaces: canvas → panels, hierarchy by lift, not shadow */
-  --canvas:#050506;
-  --surface-1:#0d0d0f;
-  --surface-2:#131316;
-  --surface-3:#1a1a1d;
-  --hairline:#1f1f23;
-  --hairline-strong:#2e2e33;
-  /* Ink: warm white and three quieter steps */
-  --ink:#f4f2ee;
-  --ink-muted:#c8c6c1;
-  --ink-subtle:#8e8d89;
-  --ink-tertiary:#5d5c59;
-  --inverse:#f4f2ee;
-  --on-inverse:#050506;
-  --nav-glass:rgba(5,5,6,0.82);
-
-  --serif:'Cormorant Garamond',Georgia,serif;
-  --sans:'Montserrat',system-ui,sans-serif;
-
-  --r-sm:6px;
-  --r-md:8px;
-  --r-lg:12px;
-  --r-xl:16px;
-  --r-pill:9999px;
-
-  --gutter:clamp(20px,4vw,32px);
-  --section-y:clamp(72px,9vw,112px);
-  --max:1200px;
-}
-html{scroll-behavior:smooth;scroll-padding-top:80px;color-scheme:dark}
-body{
-  background:var(--canvas);
-  color:var(--ink);
-  font-family:var(--sans);
-  font-size:16px;
-  line-height:1.6;
-  font-weight:400;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-::selection{background:var(--inverse);color:var(--on-inverse)}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:var(--r-sm)}
-a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-h1,h2,h3,.problem-text{text-wrap:balance}
-.skip-link{
-  position:absolute;left:12px;top:-48px;z-index:200;
-  background:var(--inverse);color:var(--on-inverse);
-  font-size:14px;font-weight:500;text-decoration:none;
-  padding:8px 14px;border-radius:var(--r-md);
-}
-.skip-link:focus{top:12px}
-
-/* SCROLLBAR */
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--canvas)}
-::-webkit-scrollbar-thumb{background:var(--surface-3);border-radius:var(--r-pill)}
-
-/* NAV — MODIFIED: 64px bar, readable sentence-case links, CTA stays visible on mobile */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  height:64px;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 var(--gutter);
-  border-bottom:1px solid transparent;
-  transition:border-color 0.3s,background 0.3s;
-}
-nav.scrolled{
-  border-bottom-color:var(--hairline);
-  background:var(--nav-glass);
-  backdrop-filter:saturate(1.2) blur(14px);
-  -webkit-backdrop-filter:saturate(1.2) blur(14px);
-}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.nav-logo-mark{
-  width:32px;height:32px;
-  background:var(--surface-1);
-  border:1px solid var(--hairline-strong);
-  border-radius:var(--r-md);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--sans);font-size:15px;font-weight:600;color:var(--ink);
-  flex-shrink:0;
-}
-.nav-brand{display:flex;flex-direction:column;gap:3px}
-.nav-name{font-family:var(--serif);font-size:20px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;line-height:1}
-.nav-descriptor{font-size:10px;font-weight:500;letter-spacing:0.14em;color:var(--ink-subtle);text-transform:uppercase;line-height:1}
-.nav-links{display:flex;align-items:center;gap:8px}
-.nav-link{
-  font-size:14px;font-weight:500;color:var(--ink-subtle);text-decoration:none;
-  padding:8px 12px;border-radius:var(--r-md);
-  transition:color 0.2s,background 0.2s;
-}
-.nav-link:hover{color:var(--ink);background:var(--surface-1)}
-.nav-cta{
-  margin-left:8px;
-  font-size:14px;font-weight:500;
-  color:var(--on-inverse);background:var(--inverse);
-  text-decoration:none;
-  padding:8px 14px;border-radius:var(--r-md);
-  transition:opacity 0.2s;
-}
-.nav-cta:hover{opacity:0.88}
-
-/* BUTTONS — MODIFIED: compact 8px-radius buttons, 44px tap height */
-.btn-primary,.btn-secondary{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  min-height:44px;
-  font-size:15px;font-weight:500;letter-spacing:0;
-  text-decoration:none;
-  padding:10px 20px;border-radius:var(--r-md);
-  border:1px solid transparent;
-  transition:background 0.2s,border-color 0.2s,color 0.2s,opacity 0.2s;
-}
-.btn-primary{color:var(--on-inverse);background:var(--inverse)}
-.btn-primary:hover{opacity:0.88}
-.btn-secondary{color:var(--ink);background:var(--surface-1);border-color:var(--hairline-strong)}
-.btn-secondary:hover{background:var(--surface-2)}
-.btn-secondary::after{content:'→';color:var(--ink-subtle);transition:transform 0.2s}
-.btn-secondary:hover::after{transform:translateX(3px)}
-
-/* SECTION BASE — MODIFIED: hairline separators, tighter rhythm, readable eyebrows */
-section{position:relative}
-.section-inner{max-width:var(--max);margin:0 auto;padding:var(--section-y) var(--gutter)}
-.section-eyebrow{
-  font-size:13px;font-weight:500;letter-spacing:0.02em;color:var(--ink-subtle);
-  margin-bottom:28px;
-}
-
-/* FOOTER CTA — MODIFIED: closing banner as a lifted panel */
-#footer-cta{border-top:1px solid var(--hairline)}
-.footer-cta-wrap{max-width:var(--max);margin:0 auto;padding:var(--section-y) var(--gutter)}
-.footer-cta-inner{
-  background:var(--surface-1);
-  border:1px solid var(--hairline);
-  border-radius:var(--r-xl);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.04);
-  padding:clamp(32px,5vw,56px);
-  display:grid;grid-template-columns:minmax(0,1fr) auto;
-  align-items:end;gap:40px;
-}
-.footer-cta-title{
-  font-family:var(--serif);
-  font-size:clamp(38px,5vw,68px);
-  font-weight:500;line-height:1.02;letter-spacing:-0.03em;
-  color:var(--ink);max-width:640px;
-}
-.footer-cta-title em{font-weight:400;color:var(--ink-subtle)}
-.footer-cta-right{
-  display:flex;flex-direction:column;
-  align-items:flex-end;gap:16px;
-}
-.footer-meta{
-  font-size:13px;line-height:1.7;
-  color:var(--ink-subtle);text-align:right;
-}
-.footer-meta a{color:var(--ink-muted);text-decoration:none;transition:color 0.2s}
-.footer-meta a:hover{color:var(--ink)}
-
-/* FOOTER BAR */
-footer{
-  border-top:1px solid var(--hairline);
-  max-width:var(--max);margin:0 auto;
-  padding:28px var(--gutter) 40px;
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-}
-.footer-copy{font-size:13px;color:var(--ink-subtle)}
-.footer-nav{display:flex;gap:24px;flex-wrap:wrap}
-.footer-nav a{
-  font-size:13px;color:var(--ink-subtle);
-  text-decoration:none;transition:color 0.2s;
-}
-.footer-nav a:hover{color:var(--ink)}
-
-/* ANIMATIONS — MODIFIED: shorter travel, respects reduced motion */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(16px)}
-  to{opacity:1;transform:translateY(0)}
-}
-.reveal{
-  opacity:0;transform:translateY(20px);
-  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1);
-}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:0.08s}
-.reveal-delay-2{transition-delay:0.16s}
-.reveal-delay-3{transition-delay:0.24s}
-.reveal-delay-4{transition-delay:0.32s}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .hero-eyebrow,.hero-title,.hero-tagline,.hero-pills,.hero-cta-row,.engine,.reveal{opacity:1;transform:none}
-}
-
-/* PAGE HEADER — MODIFIED: matches the home hero type; grid texture removed */
-.nav-link.active{color:var(--ink);background:var(--surface-1)}
-#page-header{
-  padding:calc(64px + clamp(56px,8vw,104px)) 0 clamp(56px,7vw,88px);
-}
-.page-header-inner{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
-.page-eyebrow{
-  font-size:13px;font-weight:500;letter-spacing:0.02em;color:var(--ink-subtle);
-  margin-bottom:20px;
-  opacity:0;animation:fadeUp 0.7s 0.1s forwards;
-}
-.page-title{
-  font-family:var(--serif);
-  font-size:clamp(52px,8vw,112px);
-  font-weight:500;line-height:0.92;letter-spacing:-0.035em;
-  color:var(--ink);max-width:900px;
-  opacity:0;animation:fadeUp 0.7s 0.2s forwards;
-}
-.page-title em{font-weight:400;color:var(--ink-subtle)}
-.page-sub{
-  margin-top:28px;
-  font-size:18px;line-height:1.65;color:var(--ink-muted);
-  max-width:600px;
-  opacity:0;animation:fadeUp 0.7s 0.3s forwards;
-}
-@media (prefers-reduced-motion:reduce){
-  .page-eyebrow,.page-title,.page-sub{opacity:1;transform:none}
-}
-
-/* SHARED BLOCKS — MODIFIED: tags, panels and lists used by the long-form pages */
-.tag{
-  font-size:12px;font-weight:500;color:var(--ink-muted);
-  background:var(--surface-2);border:1px solid var(--hairline);
-  border-radius:var(--r-pill);padding:4px 12px;white-space:nowrap;
-}
-.panel{
-  background:var(--surface-1);
-  border:1px solid var(--hairline);
-  border-radius:var(--r-lg);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.03);
-  padding:28px;
-}
-.panel-label{
-  font-size:13px;font-weight:500;color:var(--ink-subtle);
-  padding-bottom:14px;margin-bottom:18px;
-  border-bottom:1px solid var(--hairline);
-}
-.dash-list{list-style:none;font-size:15px;line-height:1.6;color:var(--ink-muted)}
-.dash-list li{position:relative;padding-left:18px;margin-bottom:12px}
-.dash-list li:last-child{margin-bottom:0}
-.dash-list li::before{
-  content:'';position:absolute;left:2px;top:0.62em;
-  width:5px;height:5px;border-radius:50%;background:var(--ink-tertiary);
-}
-
-/* SERVICE BLOCKS — MODIFIED: hairline-separated sections; columns become charcoal panels */
-.service{border-top:1px solid var(--hairline)}
-.service-inner{max-width:var(--max);margin:0 auto;padding:var(--section-y) var(--gutter)}
-.service-header{
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:clamp(32px,6vw,80px);
-  margin-bottom:48px;align-items:start;
-}
-.service-eyebrow{font-size:13px;font-weight:500;color:var(--ink-subtle);margin-bottom:14px}
-.service-title{
-  font-family:var(--serif);
-  font-size:clamp(40px,5vw,64px);
-  font-weight:500;line-height:1.02;letter-spacing:-0.025em;
-  color:var(--ink);
-}
-.service-title em{font-style:italic;font-weight:400;color:var(--ink-subtle)}
-.service-format{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
-.service-intro{font-size:16px;line-height:1.75;color:var(--ink-muted);padding-top:6px}
-.service-intro p{margin-bottom:16px}
-.service-intro p:last-child{margin-bottom:0}
-.service-body{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:16px;margin-bottom:16px;
-}
-.service-ideal{
-  display:grid;grid-template-columns:auto minmax(0,1fr);
-  gap:24px;align-items:start;
-  background:var(--surface-2);border-color:var(--hairline-strong);
-}
-.service-ideal-label{
-  font-size:13px;font-weight:600;color:var(--ink);white-space:nowrap;padding-top:2px;
-}
-.service-ideal-text{font-size:16px;line-height:1.7;color:var(--ink-muted)}
-
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .service-body{grid-template-columns:1fr 1fr}
-  .service-body > :last-child{grid-column:1 / -1}
-}
-@media(max-width:768px){
-  .nav-link{display:none}
-  .nav-cta{margin-left:0}
-  .service-header{grid-template-columns:1fr;gap:28px;margin-bottom:32px}
-  .service-body{grid-template-columns:1fr}
-  .service-ideal{grid-template-columns:1fr;gap:10px}
-  .footer-cta-inner{grid-template-columns:1fr;align-items:start}
-  .footer-cta-right{align-items:flex-start}
-  .footer-meta{text-align:left}
-  footer{flex-direction:column;align-items:flex-start}
-}
-@media(max-width:480px){
-  .nav-descriptor{display:none}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<script>(function(r){var c='js';try{if(matchMedia('(prefers-reduced-motion:reduce)').matches)c+=' rm';else if(sessionStorage.getItem('nima-wipe')!==null)c+=' wipe-in';else if(!sessionStorage.getItem('nima-seen'))c+=' pl-on'}catch(e){}r.className=c})(document.documentElement)</script>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer onerror="document.documentElement.className=''"></script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main" data-top>Skip to content</a>
 
-<!-- NAV -->
-<nav class="scrolled" aria-label="Main">
-  <a href="index.html" class="nav-logo">
-    <div class="nav-logo-mark">N</div>
-    <div class="nav-brand">
-      <span class="nav-name">Nima GTM</span>
-      <span class="nav-descriptor">Revenue Studio</span>
-    </div>
+<div class="pl" id="pl" aria-hidden="true">
+  <div class="pl-c">
+    <svg class="pl-m" viewBox="0 0 40 40"><path d="M9 31V9l22 22V9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg>
+    <div class="pl-w"><span>Nima GTM</span><small>Revenue Studio</small></div>
+  </div>
+  <div class="pl-n"><span id="plN">000</span></div>
+  <div class="pl-b"><i id="plB"></i></div>
+</div>
+<div class="wipe" id="wipe" aria-hidden="true"><div class="wipe-p"></div><div class="wipe-l"><span id="wipeT"></span></div></div>
+<div class="cur" id="cur" aria-hidden="true"><div class="cur-r"><span id="curT"></span></div><div class="cur-d"></div></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="hd" id="hd">
+  <a href="index.html" class="logo" data-l="Nima GTM" aria-label="Nima GTM, home">
+    <span class="logo-m" aria-hidden="true">N</span>
+    <span class="logo-w">Nima GTM<small>Revenue Studio</small></span>
   </a>
-  <div class="nav-links">
-    <a href="services.html" class="nav-link active">Services</a>
-    <a href="index.html#about" class="nav-link">About</a>
-    <a href="work.html" class="nav-link">Work</a>
-    <a href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
+  <nav class="nav" aria-label="Main"><a href="approach.html" data-l="Approach">Approach</a><a href="services.html" data-l="Services" aria-current="page">Services</a><a href="work.html" data-l="Work">Work</a><a href="about.html" data-l="About">About</a><a href="contact.html" data-l="Contact">Contact</a></nav>
+  <div class="hd-r">
+    <a class="btn btn-s mag" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span>Book a Call</span></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mm"><i></i><i></i></button>
   </div>
-</nav>
+</header>
 
-<!-- PAGE HEADER -->
-<section id="page-header">
-  <div class="page-header-inner">
-    <p class="page-eyebrow">How We Work</p>
-    <h1 class="page-title">Three ways to build<br><em>your sales engine.</em></h1>
-    <p class="page-sub">Every engagement is hands-on. We don't send decks and disappear — we build the motion and run it alongside you until it works.</p>
+<div class="mm" id="mm" aria-hidden="true">
+  <nav aria-label="Mobile"><a href="index.html" data-l="Nima GTM"><small>00</small><span>Home</span></a><a href="approach.html" data-l="Approach"><small>01</small><span>Approach</span></a><a href="services.html" data-l="Services"><small>02</small><span>Services</span></a><a href="work.html" data-l="Work"><small>03</small><span>Work</span></a><a href="about.html" data-l="About"><small>04</small><span>About</span></a><a href="contact.html" data-l="Contact"><small>05</small><span>Contact</span></a></nav>
+  <div class="mm-f">
+    <a class="btn" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span>Book a 30-min Call</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    <a href="mailto:alex@nimagtm.com">alex@nimagtm.com</a>
   </div>
-</section>
+</div>
 
 <main id="main">
-
-<!-- SERVICE 01: GTM AUDIT -->
-<article class="service" id="gtm-audit">
-  <div class="service-inner">
-
-    <div class="service-header">
-      <div class="service-meta">
-        <p class="service-eyebrow reveal">GTM Audit</p>
-        <h2 class="service-title reveal">Find exactly<br><em>what's broken.</em></h2>
-        <div class="service-format reveal reveal-delay-1">
-          <span class="tag">Two weeks</span>
-          <span class="tag">Flat fee</span>
-          <span class="tag">Remote or on-site</span>
-        </div>
-      </div>
-      <div class="service-intro reveal reveal-delay-1">
-        <p>Most founders know something is wrong with their pipeline — they just don't know exactly what, or in what order to fix it. The GTM Audit cuts through that ambiguity.</p>
-        <p>Over two weeks, we run a full diagnostic of your commercial motion: your messaging, your ICP, your sequences, your toolstack, and the way your team (or just you) runs outbound. We map what's working, what's blocking, and what to do first.</p>
-        <p>You walk away with a prioritised action plan and a dedicated implementation session — not a slide deck, but a working document you can execute from day one.</p>
-      </div>
-    </div>
-
-    <div class="service-body reveal">
-      <div class="service-col panel">
-        <p class="service-col-label panel-label">What we audit</p>
-        <ul class="service-col-list dash-list">
-          <li>ICP definition and targeting logic</li>
-          <li>Messaging and value proposition clarity</li>
-          <li>Outbound sequences and copy</li>
-          <li>CRM structure and pipeline hygiene</li>
-          <li>Toolstack and workflow efficiency</li>
-          <li>Sales process and follow-up discipline</li>
-          <li>Conversion bottlenecks at each stage</li>
-        </ul>
-      </div>
-      <div class="service-col panel">
-        <p class="service-col-label panel-label">What you receive</p>
-        <ul class="service-col-list dash-list">
-          <li>Full written diagnostic report</li>
-          <li>Prioritised action plan with quick wins</li>
-          <li>Rewritten messaging and sequence recommendations</li>
-          <li>ICP refinement with targeting criteria</li>
-          <li>CRM and toolstack recommendations</li>
-          <li>90-minute implementation session</li>
-          <li>30-day follow-up check-in</li>
-        </ul>
-      </div>
-      <div class="service-col panel">
-        <p class="service-col-label panel-label">How it works</p>
-        <ul class="service-col-list dash-list">
-          <li>Week 1 — discovery calls, CRM access, sequence review</li>
-          <li>Week 1 — shadowing calls and objection mapping</li>
-          <li>Week 2 — diagnostic write-up and prioritisation</li>
-          <li>Week 2 — delivery session and action plan walkthrough</li>
-          <li>Post-engagement — 30-day check-in included</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="service-ideal panel reveal">
-      <p class="service-ideal-label">Right for you if</p>
-      <p class="service-ideal-text">You're a B2B founder with a product that works but a pipeline that doesn't. You're doing outbound but not converting. You have a sales hire who isn't hitting numbers. Or you're about to invest in growth and want to know exactly where to start.</p>
-    </div>
-
-  </div>
-</article>
-
-<!-- SERVICE 02: PIPELINE SPRINT -->
-<article class="service" id="pipeline-sprint">
-  <div class="service-inner">
-
-    <div class="service-header">
-      <div class="service-meta">
-        <p class="service-eyebrow reveal">Pipeline Sprint</p>
-        <h2 class="service-title reveal">Build the engine.<br><em>Then run it.</em></h2>
-        <div class="service-format reveal reveal-delay-1">
-          <span class="tag">Three months</span>
-          <span class="tag">Monthly retainer</span>
-          <span class="tag">Fully embedded</span>
-        </div>
-      </div>
-      <div class="service-intro reveal reveal-delay-1">
-        <p>The Pipeline Sprint is for founders who are ready to build a proper outbound motion — and want someone to build it with them, not just advise on it.</p>
-        <p>Over three months, we design your entire outbound system from scratch: ICP definition, sequence copywriting, toolstack setup, SDR coaching, and weekly pipeline reporting. We don't hand it over and leave — we run the motion week by week alongside your team until it produces consistent results.</p>
-        <p>By the end, you have a working outbound engine, a coached team, and the playbooks to keep it running without us.</p>
-      </div>
-    </div>
-
-    <div class="service-body reveal">
-      <div class="service-col panel">
-        <p class="service-col-label panel-label">What we build</p>
-        <ul class="service-col-list dash-list">
-          <li>ICP definition and account targeting lists</li>
-          <li>Multi-touch outbound sequences (email + LinkedIn)</li>
-          <li>Toolstack setup and CRM configuration</li>
-          <li>Objection-handling frameworks</li>
-          <li>Call scripts and discovery frameworks</li>
-          <li>Pipeline reporting and KPI dashboard</li>
-          <li>Full outbound playbook on handoff</li>
-        </ul>
-      </div>
-      <div class="service-col panel">
-        <p class="service-col-label panel-label">Ongoing support</p>
-        <ul class="service-col-list dash-list">
-          <li>Weekly pipeline review calls</li>
-          <li>SDR coaching and live call feedback</li>
-          <li>Sequence iteration based on reply data</li>
-          <li>Prospect list management and enrichment</li>
-          <li>CRM hygiene and pipeline progression</li>
-          <li>Monthly performance reporting</li>
-          <li>Direct Slack access throughout</li>
-        </ul>
-      </div>
-      <div class="service-col panel">
-        <p class="service-col-label panel-label">How it works</p>
-        <ul class="service-col-list dash-list">
-          <li>Month 1 — ICP, sequences, toolstack, first campaigns live</li>
-          <li>Month 2 — SDR coaching, iteration, pipeline building</li>
-          <li>Month 3 — optimisation, reporting, playbook handoff</li>
-          <li>Weekly check-ins throughout all three months</li>
-          <li>Option to extend or transition to Revenue Partner</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="service-ideal panel reveal">
-      <p class="service-ideal-label">Right for you if</p>
-      <p class="service-ideal-text">You have a product with clear market fit but no systematic outbound motion. You may have an SDR or small sales team without clear direction. You're ready to invest three months in building something that outlasts the engagement — not just generating a few leads.</p>
-    </div>
-
-  </div>
-</article>
-
-<!-- SERVICE 03: REVENUE PARTNER -->
-<article class="service" id="revenue-partner">
-  <div class="service-inner">
-
-    <div class="service-header">
-      <div class="service-meta">
-        <p class="service-eyebrow reveal">Revenue Partner</p>
-        <h2 class="service-title reveal">Your commercial team,<br><em>embedded.</em></h2>
-        <div class="service-format reveal reveal-delay-1">
-          <span class="tag">Ongoing</span>
-          <span class="tag">Monthly retainer</span>
-          <span class="tag">Minimum 3 months</span>
-        </div>
-      </div>
-      <div class="service-intro reveal reveal-delay-1">
-        <p>The Revenue Partner engagement is the deepest form of collaboration we offer. We become your embedded commercial team — not a consultant on the sidelines, but an operator in the motion.</p>
-        <p>We own the pipeline, coach your people, design the strategy, refine the positioning, and step into high-stakes deals when it matters. You get the full commercial infrastructure of an experienced sales leader without the cost or commitment of a full-time hire.</p>
-        <p>This is how we worked with OKS and NextLevel. It's built for founders who want a long-term partner, not a short-term fix.</p>
-      </div>
-    </div>
-
-    <div class="service-body reveal">
-      <div class="service-col panel">
-        <p class="service-col-label panel-label">What we own</p>
-        <ul class="service-col-list dash-list">
-          <li>Full outbound pipeline strategy and execution</li>
-          <li>Sales process design and iteration</li>
-          <li>Positioning and messaging refinement</li>
-          <li>Enterprise and strategic account pursuit</li>
-          <li>Deal navigation and closing support</li>
-          <li>New market and territory development</li>
-          <li>Partnership and channel strategy</li>
-        </ul>
-      </div>
-      <div class="service-col panel">
-        <p class="service-col-label panel-label">What we run</p>
-        <ul class="service-col-list dash-list">
-          <li>SDR and sales team day-to-day management</li>
-          <li>Weekly pipeline reviews and deal coaching</li>
-          <li>CRM ownership and reporting</li>
-          <li>Outbound campaigns and sequence management</li>
-          <li>Prospect research and account targeting</li>
-          <li>Call debriefs and conversion analysis</li>
-          <li>Board and investor pipeline reporting</li>
-        </ul>
-      </div>
-      <div class="service-col panel">
-        <p class="service-col-label panel-label">What you get</p>
-        <ul class="service-col-list dash-list">
-          <li>Senior sales operator, not a junior exec</li>
-          <li>Full commercial infrastructure from day one</li>
-          <li>UK, French and Southern European market coverage</li>
-          <li>Enterprise and luxury brand network access</li>
-          <li>Fractional cost, full-time commitment</li>
-          <li>Transparent weekly reporting</li>
-          <li>No long lock-in — rolling monthly after month 3</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="service-ideal panel reveal">
-      <p class="service-ideal-label">Right for you if</p>
-      <p class="service-ideal-text">You're a founder or early-stage team closing deals on instinct with no repeatable process behind them. You're growing but not yet ready to hire a VP of Sales. You want someone who will operate, not just advise — and who will be accountable to the results.</p>
-    </div>
-
-  </div>
-</article>
-
-</main>
-
-<!-- FOOTER CTA -->
-<section id="footer-cta">
-  <!-- MODIFIED: closing CTA as a lifted panel; grid texture removed -->
-  <div class="footer-cta-wrap">
-  <div class="footer-cta-inner">
-    <h2 class="footer-cta-title reveal">Not sure which is right?<br><em>Let's figure it out together.</em></h2>
-    <div class="footer-cta-right reveal reveal-delay-2">
-      <a href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener" class="btn-primary">Book a 30-min Call</a>
-      <p class="footer-meta">
-        <a href="mailto:alex@nimagtm.com">alex@nimagtm.com</a><br>
-        UK & Europe
-      </p>
-    </div>
-  </div>
+<section class="ph-hero">
+  <div class="wrap">
+    <div class="lab label"><span>Services</span><span>How we work</span></div>
+    <h1 class="h1 sp">Three ways to build <em>your sales engine.</em></h1>
+    <p class="lead rv">Every engagement is hands-on. We don't send decks and disappear — we build the motion and run it alongside you until it works.</p>
+    <nav class="sv-ix" aria-label="Services">
+      <a href="#audit"><b>01</b>GTM Audit</a>
+      <a href="#sprint"><b>02</b>Pipeline Sprint</a>
+      <a href="#partner"><b>03</b>Revenue Partner</a>
+    </nav>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <p class="footer-copy">© 2026 Nima GTM · Revenue Studio</p>
-  <div class="footer-nav">
-    <a href="index.html">Home</a>
-    <a href="work.html">Work</a>
-    <a href="https://www.linkedin.com/in/alexis-naraghi-510415134/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener">Book a Call</a>
+<article class="of" id="audit">
+  <div class="wrap of-g">
+    <aside class="of-side">
+      <div class="of-n" aria-hidden="true">01</div>
+      <dl class="of-f"><div><dt>Duration</dt><dd>Two weeks</dd></div><div><dt>Pricing</dt><dd>Flat fee</dd></div><div><dt>Delivery</dt><dd>Remote or on-site</dd></div></dl>
+      <a class="btn mag" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span>Start with an audit</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    </aside>
+    <div>
+      <h2 class="of-t">GTM Audit</h2>
+      <p class="of-h sp">Find exactly <em>what's broken.</em></p>
+      <p class="lead rv">A two-week diagnostic of your commercial motion: what works, what blocks growth, and what to fix first. Not a slide deck, but a working document you can execute from day one.</p>
+      <div class="of-cols"><div class="panel rv"><h3>What we audit</h3><ul class="dash"><li>ICP definition and targeting logic</li><li>Messaging and value proposition clarity</li><li>Outbound sequences and copy</li><li>CRM structure and pipeline hygiene</li><li>Toolstack and workflow efficiency</li><li>Sales process and follow-up discipline</li><li>Conversion bottlenecks at each stage</li></ul></div><div class="panel rv"><h3>What you receive</h3><ul class="dash"><li>Full written diagnostic report</li><li>Prioritised action plan with quick wins</li><li>Rewritten messaging and sequence recommendations</li><li>ICP refinement with targeting criteria</li><li>CRM and toolstack recommendations</li><li>90-minute implementation session</li><li>30-day follow-up check-in</li></ul></div></div>
+      <div class="pt"><h3>Process</h3><div class="pt-tr"><div class="pt-seg"><b>Week 1</b><span>Discovery calls, CRM access, sequence review, call shadowing and objection mapping</span></div><div class="pt-seg"><b>Week 2</b><span>Diagnostic write-up, prioritisation, delivery session and action plan walkthrough</span></div><div class="pt-seg sm"><b>+30 days</b><span>Check-in included</span></div></div></div>
+      <div class="fit rv"><h3>Right for you if</h3><p>You're a B2B founder with a product that works but a pipeline that doesn't. You're doing outbound but not converting, a sales hire isn't hitting numbers, or you're about to invest in growth and want to know exactly where to start.</p></div>
+    </div>
+  </div>
+</article>
+<article class="of" id="sprint">
+  <div class="wrap of-g">
+    <aside class="of-side">
+      <div class="of-n" aria-hidden="true">02</div>
+      <dl class="of-f"><div><dt>Duration</dt><dd>Three months</dd></div><div><dt>Pricing</dt><dd>Monthly retainer</dd></div><div><dt>Delivery</dt><dd>Fully embedded</dd></div></dl>
+      <a class="btn mag" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span>Build the engine</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    </aside>
+    <div>
+      <h2 class="of-t">Pipeline Sprint</h2>
+      <p class="of-h sp">Build the engine. <em>Then run it.</em></p>
+      <p class="lead rv">We design your entire outbound system from scratch, then run it week by week alongside your team until it produces consistent results. By the end, you have a working engine, a coached team, and the playbooks to keep it running without us.</p>
+      <div class="of-cols"><div class="panel rv"><h3>What we build</h3><ul class="dash"><li>ICP definition and account targeting lists</li><li>Multi-touch outbound sequences (email + LinkedIn)</li><li>Toolstack setup and CRM configuration</li><li>Objection-handling frameworks</li><li>Call scripts and discovery frameworks</li><li>Pipeline reporting and KPI dashboard</li><li>Full outbound playbook on handoff</li></ul></div><div class="panel rv"><h3>Ongoing support</h3><ul class="dash"><li>Weekly pipeline review calls</li><li>SDR coaching and live call feedback</li><li>Sequence iteration based on reply data</li><li>Prospect list management and enrichment</li><li>CRM hygiene and pipeline progression</li><li>Monthly performance reporting</li><li>Direct Slack access throughout</li></ul></div></div>
+      <div class="pt"><h3>Process</h3><div class="pt-tr"><div class="pt-seg"><b>Month 1</b><span>ICP, sequences, toolstack, first campaigns live</span></div><div class="pt-seg"><b>Month 2</b><span>SDR coaching, iteration, pipeline building</span></div><div class="pt-seg"><b>Month 3</b><span>Optimisation, reporting, playbook handoff</span></div></div></div>
+      <div class="fit rv"><h3>Right for you if</h3><p>You have a product with clear market fit but no systematic outbound motion. You may have an SDR or small sales team without clear direction, and you're ready to invest three months in something that outlasts the engagement.</p></div>
+    </div>
+  </div>
+</article>
+<article class="of of-dk" id="partner">
+  <div class="wrap of-g">
+    <aside class="of-side">
+      <div class="of-n" aria-hidden="true">03</div>
+      <dl class="of-f"><div><dt>Duration</dt><dd>Ongoing</dd></div><div><dt>Pricing</dt><dd>Monthly retainer</dd></div><div><dt>Commitment</dt><dd>Minimum 3 months</dd></div></dl>
+      <a class="btn mag" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span>Become a partner</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    </aside>
+    <div>
+      <h2 class="of-t">Revenue Partner</h2>
+      <p class="of-h sp">Your commercial team, <em>embedded.</em></p>
+      <p class="lead rv">The deepest form of collaboration we offer: not a consultant on the sidelines, but an operator in the motion. This is how we worked with OKS and NextLevel. It's built for founders who want a long-term partner, not a short-term fix.</p>
+      <div class="of-cols three"><div class="panel rv"><h3>What we own</h3><ul class="dash"><li>Full outbound pipeline strategy and execution</li><li>Sales process design and iteration</li><li>Positioning and messaging refinement</li><li>Enterprise and strategic account pursuit</li><li>Deal navigation and closing support</li><li>New market and territory development</li><li>Partnership and channel strategy</li></ul></div><div class="panel rv"><h3>What we run</h3><ul class="dash"><li>SDR and sales team day-to-day management</li><li>Weekly pipeline reviews and deal coaching</li><li>CRM ownership and reporting</li><li>Outbound campaigns and sequence management</li><li>Prospect research and account targeting</li><li>Call debriefs and conversion analysis</li><li>Board and investor pipeline reporting</li></ul></div><div class="panel rv"><h3>What you get</h3><ul class="dash"><li>Senior sales operator, not a junior exec</li><li>Full commercial infrastructure from day one</li><li>UK, French and Southern European market coverage</li><li>Enterprise and luxury brand network access</li><li>Fractional cost, full-time commitment</li><li>Transparent weekly reporting</li><li>No long lock-in — rolling monthly after month 3</li></ul></div></div>
+      
+      <div class="fit rv"><h3>Right for you if</h3><p>You're a founder or early-stage team closing deals on instinct with no repeatable process behind them. You're not yet ready to hire a VP of Sales, and you want someone who will operate, not just advise.</p></div>
+    </div>
+  </div>
+</article>
+
+<section class="pick paper">
+  <div class="wrap">
+    <div class="lab label"><span>?</span><span>Not sure which is right?</span></div>
+    <h2 class="h2 sp">Where are you <em>today?</em></h2>
+    <div class="pick-g" role="radiogroup" aria-label="Where are you today?">
+      <button class="pk" role="radio" aria-checked="false" data-r="audit"><span class="label">A</span><b>We do outbound, but the pipeline doesn't convert, and I don't know why.</b></button>
+      <button class="pk" role="radio" aria-checked="false" data-r="sprint"><span class="label">B</span><b>The product sells, but we have no systematic outbound yet.</b></button>
+      <button class="pk" role="radio" aria-checked="false" data-r="partner"><span class="label">C</span><b>I close on instinct and I'm not ready to hire a VP of Sales.</b></button>
+    </div>
+    <div class="pick-r" aria-live="polite">
+      <span class="label">Our recommendation</span>
+      <div class="pick-c"><b id="pickT">—</b><span id="pickD">Choose the sentence that sounds most like you.</span></div>
+      <a class="btn mag" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span>Let's figure it out together</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="cta" id="cta">
+  <div class="wrap">
+    <div class="lab label"><span>→</span><span>Next step</span></div>
+    <h2 class="cta-h"><span class="ln"><span>The engine doesn't</span></span><span class="ln"><span>build itself.</span></span><span class="ln"><em>Let's start.</em></span></h2>
+    <div class="cta-r">
+      <a class="cta-btn mag" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span class="cta-btn-i"><span>Book a 30-min Call</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a>
+      <div class="cta-m"><a href="mailto:alex@nimagtm.com">alex@nimagtm.com</a><span class="label">UK &amp; Europe · London · Paris</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-g">
+      <div><span class="label">Studio</span><p>Revenue Studio for B2B founders. Outbound engines, built and run.</p></div>
+      <div><span class="label">Offices</span><p>London <b data-clock="ldn">--:--</b><br>Paris <b data-clock="par">--:--</b></p></div>
+      <div><span class="label">Contact</span><p><a href="mailto:alex@nimagtm.com">alex@nimagtm.com</a><br><a href="https://www.linkedin.com/in/alexis-naraghi-510415134/" target="_blank" rel="noopener">LinkedIn</a></p></div>
+      <div><span class="label">Pages</span><p><a href="approach.html" data-l="Approach">Approach</a><br><a href="services.html" data-l="Services">Services</a><br><a href="work.html" data-l="Work">Work</a><br><a href="about.html" data-l="About">About</a><br><a href="contact.html" data-l="Contact">Contact</a></p></div>
+    </div>
+    <div class="ft-w" aria-hidden="true"><span>Nima</span><span>GTM</span></div>
+    <div class="ft-b"><span>© 2026 Nima GTM · Revenue Studio</span><span>UK &amp; Europe</span><button id="top">Back to top ↑</button></div>
   </div>
 </footer>
-
-<script>
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}
-  });
-},{threshold:0.1});
-reveals.forEach(el => observer.observe(el));
-</script>
+<a class="mbar" id="mbar" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span>Book a 30-min Call</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
 </body>
 </html>
