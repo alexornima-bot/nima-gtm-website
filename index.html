@@ -28,6 +28,8 @@
 <div class="wipe" id="wipe" aria-hidden="true"><div class="wipe-p"></div><div class="wipe-l"><span id="wipeT"></span></div></div>
 <div class="cur" id="cur" aria-hidden="true"><div class="cur-r"><span id="curT"></span></div><div class="cur-d"></div></div>
 <div class="grain" aria-hidden="true"></div>
+<canvas id="flow" aria-hidden="true"></canvas>
+<div class="rail off" id="rail"><span id="railN"></span><i><b></b></i><a href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener">Book a Call</a></div>
 
 <header class="hd" id="hd">
   <a href="index.html" class="logo" data-l="Nima GTM" aria-label="Nima GTM, home">
@@ -74,60 +76,60 @@
   <div class="mq"><div class="mq-t"><span>Tapbuy</span><i></i><span>Glopal</span><i></i><span>Yotpo</span><i></i><span>Narvar</span><i></i><span>Bulgari</span><i></i><span>Messika</span><i></i><span>Boots</span><i></i><span>WAX</span><i></i><span>OKS</span><i></i><span>NextLevel</span><i></i><span>Tapbuy</span><i></i><span>Glopal</span><i></i><span>Yotpo</span><i></i><span>Narvar</span><i></i><span>Bulgari</span><i></i><span>Messika</span><i></i><span>Boots</span><i></i><span>WAX</span><i></i><span>OKS</span><i></i><span>NextLevel</span><i></i></div></div>
 </section>
 
-<section class="intro paper">
+<section class="intro paper" data-step="The opportunity">
   <div class="wrap intro-g">
     <div class="lab label"><span>01</span><span>The opportunity</span></div>
     <h2 class="h2 sp">Great products deserve <em>great sales engines.</em></h2>
     <div class="intro-r">
-      <p class="lead rv">Most founders are brilliant at product — and stretched thin on go-to-market. We step in as an embedded partner: building your outbound engine, sharpening your positioning, and running the motion alongside you.</p>
+      <p class="lead sw">Most founders are brilliant at product — and stretched thin on go-to-market. We step in as an embedded partner: building your outbound engine, sharpening your positioning, and running the motion alongside you.</p>
       <a href="approach.html" data-l="Approach" class="lnk lnk-d rv"><span>Our approach</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
     </div>
   </div>
 </section>
 
-<section class="num" aria-label="Track record">
+<section class="num" aria-label="Track record" data-step="Track record">
   <div class="wrap">
     <div class="lab label"><span>02</span><span>Track record</span></div>
     <div class="num-g">
-      <div class="nc"><div class="nv" role="img" aria-label="£1M+"><span class="cu">£</span><span class="od" data-n="1">1</span><span class="cu">M+</span></div><p>Closed new business across UK &amp; France</p></div>
-      <div class="nc"><div class="nv" role="img" aria-label="£2M+"><span class="cu">£</span><span class="od" data-n="2">2</span><span class="cu">M+</span></div><p>ACV qualified in enterprise pipeline</p></div>
-      <div class="nc"><div class="nv" role="img" aria-label="5+"><span class="od" data-n="5">5</span><span class="cu">+</span></div><p>Years operating across UK, France &amp; Southern Europe</p></div>
-      <div class="nc"><div class="nv" role="img" aria-label="4"><span class="od" data-n="4">4</span></div><p>Working languages: English, French, Italian, Farsi</p></div>
+      <div class="nc rv"><div class="nv" role="img" aria-label="£1M+"><span class="cu">£</span><span class="od" data-n="1">1</span><span class="cu">M+</span></div><p>Closed new business across UK &amp; France</p></div>
+      <div class="nc rv"><div class="nv" role="img" aria-label="£2M+"><span class="cu">£</span><span class="od" data-n="2">2</span><span class="cu">M+</span></div><p>ACV qualified in enterprise pipeline</p></div>
+      <div class="nc rv"><div class="nv" role="img" aria-label="5+"><span class="od" data-n="5">5</span><span class="cu">+</span></div><p>Years operating across UK, France &amp; Southern Europe</p></div>
+      <div class="nc rv"><div class="nv" role="img" aria-label="4"><span class="od" data-n="4">4</span></div><p>Working languages: English, French, Italian, Farsi</p></div>
     </div>
   </div>
 </section>
 
-<section class="sv paper">
+<section class="sv paper" data-step="Services">
   <div class="wrap">
     <div class="lab label"><span>03</span><span>Services</span></div>
     <h2 class="h2 sp">Three ways to build <em>your sales engine.</em></h2>
     <div class="sv-l">
-      <a class="svr" href="services.html#audit" data-l="Services"><span class="svr-n label">01</span><span class="svr-t">GTM Audit</span><span class="svr-d">Find exactly what's broken.</span><span class="svr-m label"><span>Two weeks</span><span>Flat fee</span></span><svg class="svr-a" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-      <a class="svr" href="services.html#sprint" data-l="Services"><span class="svr-n label">02</span><span class="svr-t">Pipeline Sprint</span><span class="svr-d">Build the engine. Then run it.</span><span class="svr-m label"><span>Three months</span><span>Monthly retainer</span></span><svg class="svr-a" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-      <a class="svr" href="services.html#partner" data-l="Services"><span class="svr-n label">03</span><span class="svr-t">Revenue Partner</span><span class="svr-d">Your commercial team, embedded.</span><span class="svr-m label"><span>Ongoing</span><span>Minimum 3 months</span></span><svg class="svr-a" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      <a class="svr rv" href="services.html#audit" data-l="Services"><span class="svr-n label">01</span><span class="svr-t">GTM Audit</span><span class="svr-d">Find exactly what's broken.</span><span class="svr-m label"><span>Two weeks</span><span>Flat fee</span></span><svg class="svr-a" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      <a class="svr rv" href="services.html#sprint" data-l="Services"><span class="svr-n label">02</span><span class="svr-t">Pipeline Sprint</span><span class="svr-d">Build the engine. Then run it.</span><span class="svr-m label"><span>Three months</span><span>Monthly retainer</span></span><svg class="svr-a" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      <a class="svr rv" href="services.html#partner" data-l="Services"><span class="svr-n label">03</span><span class="svr-t">Revenue Partner</span><span class="svr-d">Your commercial team, embedded.</span><span class="svr-m label"><span>Ongoing</span><span>Minimum 3 months</span></span><svg class="svr-a" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
     </div>
   </div>
 </section>
 
-<section class="wk">
+<section class="wk" data-step="Selected work">
   <div class="wrap">
     <div class="wk-hd"><div class="lab label"><span>04</span><span>Selected work</span></div><a href="work.html" data-l="Work" class="lnk"><span>All case studies</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
     <div class="wk-g">
-      <a class="wc" href="work.html#wax" data-l="Work">
+      <a class="wc" style="--i:0" href="work.html#wax" data-l="Work">
         <div class="wc-top label"><span>WAX · WhatsApp marketing</span><span>Current client</span></div>
         <h3 class="wc-h">Every prospect. <em>A different message.</em></h3>
         <div class="wc-o"><span class="label">What we built</span><b>UK TAM, sales strategy and AI-driven Clay campaigns</b></div>
         <div class="wc-tags"><span class="tag">Clay</span><span class="tag">UK market</span></div>
         <div class="wc-glow" aria-hidden="true"></div>
       </a>
-      <a class="wc" href="work.html#oks" data-l="Work">
+      <a class="wc" style="--i:1" href="work.html#oks" data-l="Work">
         <div class="wc-top label"><span>OKS · B2B SaaS</span><span>Past client</span></div>
         <h3 class="wc-h">From instinct to <em>infrastructure.</em></h3>
         <div class="wc-o"><span class="label">Highlight</span><b>Sourced APM Monaco and supported the CEO through it</b></div>
         <div class="wc-tags"><span class="tag">Revenue Partner</span><span class="tag">Luxury Retail</span></div>
         <div class="wc-glow" aria-hidden="true"></div>
       </a>
-      <a class="wc" href="work.html#nextlevel" data-l="Work">
+      <a class="wc" style="--i:2" href="work.html#nextlevel" data-l="Work">
         <div class="wc-top label"><span>NextLevel · Agentic transformation</span><span>Past client</span></div>
         <h3 class="wc-h">Everything broken. <em>Everything rebuilt.</em></h3>
         <div class="wc-o"><span class="label">Highlight</span><b>Introduced to the LVMH Group, discussions opened</b></div>
@@ -142,28 +144,28 @@
   </div>
 </section>
 
-<section class="ftz paper">
+<section class="ftz paper" data-step="The founder">
   <div class="wrap ftz-g">
     <a class="por por-s" href="about.html" data-l="About" aria-label="About Alexis Naraghi"><img class="por-bw" src="assets/alexis.webp" width="880" height="1100" loading="lazy" decoding="async" alt="Alexis Naraghi — Founder, Nima GTM"><img class="por-co" src="assets/alexis.webp" width="880" height="1100" loading="lazy" decoding="async" alt="" aria-hidden="true"></a>
     <div>
       <div class="lab label"><span>05</span><span>The founder</span></div>
       <h2 class="h2 sp">Built by an operator. <em>Not an advisor.</em></h2>
-      <p class="lead rv">Alexis Naraghi ran enterprise sales cycles at Tapbuy, built Southern European markets at Glopal and opened the French market at Yotpo. Today he builds the engine — then runs it.</p>
+      <p class="lead sw">Alexis Naraghi ran enterprise sales cycles at Tapbuy, built Southern European markets at Glopal and opened the French market at Yotpo. Today he builds the engine — then runs it.</p>
       <a href="about.html" data-l="About" class="lnk lnk-d rv"><span>Meet the founder</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
     </div>
   </div>
 </section>
 </main>
 
-<section class="cta" id="cta">
-  <div class="wrap">
+<section class="cta" id="cta" data-step="Book a Call">
+  <div class="cta-s"><div class="wrap">
     <div class="lab label"><span>→</span><span>Next step</span></div>
     <h2 class="cta-h"><span class="ln"><span>The engine doesn't</span></span><span class="ln"><span>build itself.</span></span><span class="ln"><em>Let's start.</em></span></h2>
     <div class="cta-r">
-      <a class="cta-btn mag" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span class="cta-btn-i"><span>Book a 30-min Call</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a>
-      <div class="cta-m"><a href="mailto:alex@nimagtm.com">alex@nimagtm.com</a><span class="label">UK &amp; Europe · London · Paris</span></div>
+      <span class="cta-bw"><a class="cta-btn mag" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span class="cta-btn-i"><span>Book a 30-min Call</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></span>
+      <div class="cta-m"><a href="mailto:alex@nimagtm.com">alex@nimagtm.com</a><span class="label">UK &amp; Europe · London · Paris</span><a class="lnk cta-next" href="work.html" data-l="Work"><span>Not ready yet? See the work</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
     </div>
-  </div>
+  </div></div>
 </section>
 
 <footer class="ft">
@@ -178,6 +180,6 @@
     <div class="ft-b"><span>© 2026 Nima GTM · Revenue Studio</span><span>UK &amp; Europe</span><button id="top">Back to top ↑</button></div>
   </div>
 </footer>
-<a class="mbar" id="mbar" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span>Book a 30-min Call</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+<a class="mbar" id="mbar" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><i class="mbar-p" aria-hidden="true"></i><span>Book a 30-min Call</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
 </body>
 </html>

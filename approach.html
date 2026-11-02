@@ -28,6 +28,8 @@
 <div class="wipe" id="wipe" aria-hidden="true"><div class="wipe-p"></div><div class="wipe-l"><span id="wipeT"></span></div></div>
 <div class="cur" id="cur" aria-hidden="true"><div class="cur-r"><span id="curT"></span></div><div class="cur-d"></div></div>
 <div class="grain" aria-hidden="true"></div>
+<canvas id="flow" aria-hidden="true"></canvas>
+<div class="rail off" id="rail"><span id="railN"></span><i><b></b></i><a href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener">Book a Call</a></div>
 
 <header class="hd" id="hd">
   <a href="index.html" class="logo" data-l="Nima GTM" aria-label="Nima GTM, home">
@@ -58,7 +60,7 @@
   </div>
 </section>
 
-<section class="opp paper">
+<section class="opp paper" data-step="What changes">
   <div class="wrap">
     <div class="lab label"><span>01</span><span>What changes</span></div>
     <h2 class="h2 sp">From instinct <em>to infrastructure.</em></h2>
@@ -79,7 +81,7 @@
   </div>
 </section>
 
-<section class="mt" id="method">
+<section class="mt" id="method" data-step="The method">
   <div class="mt-s">
     <div class="wrap">
       <div class="lab label"><span>02</span><span>The method</span></div>
@@ -97,7 +99,7 @@
   </div>
 </section>
 
-<section class="ind-s">
+<section class="ind-s" data-step="Where we operate">
   <div class="wrap">
     <div class="lab label"><span>03</span><span>Where we operate</span></div>
     <div class="ind-g">
@@ -109,15 +111,15 @@
 </section>
 </main>
 
-<section class="cta" id="cta">
-  <div class="wrap">
+<section class="cta" id="cta" data-step="Book a Call">
+  <div class="cta-s"><div class="wrap">
     <div class="lab label"><span>→</span><span>Next step</span></div>
     <h2 class="cta-h"><span class="ln"><span>The engine doesn't</span></span><span class="ln"><span>build itself.</span></span><span class="ln"><em>Let's start.</em></span></h2>
     <div class="cta-r">
-      <a class="cta-btn mag" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span class="cta-btn-i"><span>Book a 30-min Call</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a>
-      <div class="cta-m"><a href="mailto:alex@nimagtm.com">alex@nimagtm.com</a><span class="label">UK &amp; Europe · London · Paris</span></div>
+      <span class="cta-bw"><a class="cta-btn mag" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span class="cta-btn-i"><span>Book a 30-min Call</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></span>
+      <div class="cta-m"><a href="mailto:alex@nimagtm.com">alex@nimagtm.com</a><span class="label">UK &amp; Europe · London · Paris</span><a class="lnk cta-next" href="services.html" data-l="Services"><span>Not ready yet? See the services</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
     </div>
-  </div>
+  </div></div>
 </section>
 
 <footer class="ft">
@@ -132,6 +134,6 @@
     <div class="ft-b"><span>© 2026 Nima GTM · Revenue Studio</span><span>UK &amp; Europe</span><button id="top">Back to top ↑</button></div>
   </div>
 </footer>
-<a class="mbar" id="mbar" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><span>Book a 30-min Call</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+<a class="mbar" id="mbar" href="https://calendar.app.google/csMAmkrfrARDxmJ37" target="_blank" rel="noopener"><i class="mbar-p" aria-hidden="true"></i><span>Book a 30-min Call</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
 </body>
 </html>
