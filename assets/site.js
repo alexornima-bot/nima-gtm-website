@@ -103,7 +103,7 @@ function cursor(){if(isTouch||RM)return false;rx=lerp(rx,mx,.2);ry=lerp(ry,my,.2
 
 /* measurements */
 var CUTS=$$('.paper,.cs-dk,.of-dk,.mt'),WCS=$$('.wk-g .wc'),PLX=$$('[data-plx]'),STEPS=$$('[data-step]'),rail=$('#rail'),railN=$('#railN'),ctaBtn=$('.cta-btn')||$('.ct-book'),ctaS=$('.cta-s'),flowC=$('#flow');
-var hero=$('#hero'),sx=$('#sx'),mt=$('.mt'),mtTr=$('#mtTr'),ft=$('.ft'),cta=$('#cta'),mbar=$('#mbar'),M={},papers=$$('.paper'),sxLis=sx?$$('li',sx):[],sxN=$('#sxN'),mtLine=$('#mtLine'),mtDot=$('#mtDot');
+var hero=$('#hero'),sx=$('#sx'),mt=$('.mt'),mtTr=$('#mtTr'),ft=$('.ft'),cta=$('#cta'),mbar=$('#mbar'),M={},papers=[],sxLis=sx?$$('li',sx):[],sxN=$('#sxN'),mtLine=$('#mtLine'),mtDot=$('#mtDot');
 function top(el){return el.getBoundingClientRect().top+scrollY}
 function measure(){W=innerWidth;H=innerHeight;
   if(hero)M.hero=[top(hero),hero.offsetHeight];
