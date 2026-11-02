@@ -1,6 +1,13 @@
 /* Nima GTM · Revenue Studio
    MODIFIED: motion rebuild (Nov 2026). Structure and motion from the rebuild brief;
    colour tokens and type system unchanged from the Linear-inspired redesign. */
+/* Fonts are self-hosted: no third-party request on page load (OFL licensed) */
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/cormorant-italic-0.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/cormorant-normal-1.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/cormorant-normal-1.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/montserrat-normal-2.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/montserrat-normal-2.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/montserrat-normal-2.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --canvas:#050506;
@@ -743,3 +750,7 @@ html:not(.js) .cta-s,.rm .cta-s{position:static;height:auto}
 .cta-h{font-size:clamp(3rem,min(10vw,15.5vh),12rem)}
 .cta-btn{width:clamp(128px,min(15vw,23vh),210px)}
 @media (max-width:720px){.cta-h{font-size:clamp(2.9rem,min(14vw,10vh),4.6rem)}}
+
+/* set in CSS, not inline, so the content security policy can forbid inline styles */
+.wk-g .wc:nth-child(2){--i:1}.wk-g .wc:nth-child(3){--i:2}
+.v-bar i:nth-child(1){--h:.28}.v-bar i:nth-child(2){--h:.4}.v-bar i:nth-child(3){--h:.36}.v-bar i:nth-child(4){--h:.58}.v-bar i:nth-child(5){--h:.7}.v-bar i:nth-child(6){--h:.92}

@@ -2,6 +2,7 @@
    One animation loop that sleeps whenever nothing is moving, so phones keep their battery. */
 (function(){
 'use strict';
+window.__n=1;document.documentElement.classList.add('js');
 var d=document,root=d.documentElement,body=d.body;
 var $=function(s,c){return (c||d).querySelector(s)},$$=function(s,c){return [].slice.call((c||d).querySelectorAll(s))};
 var clamp=function(v,a,b){return v<a?a:v>b?b:v},lerp=function(a,b,t){return a+(b-a)*t};
@@ -225,8 +226,8 @@ addEventListener('scroll',kick,{passive:true});
 if(mtTr&&(isTouch||innerWidth<=900||RM)){var io2=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('on',e.isIntersecting)})},{threshold:.4});$$('.st').forEach(function(s){io2.observe(s)})}
 
 /* languages rotator */
-(function(){var a=$('#hello'),b=$('#helloL');if(!a||RM)return;var L2=[['Hello','English'],['Bonjour','Français'],['Ciao','Italiano'],['سلام','فارسی']],i=0;
-  setInterval(function(){a.classList.add('sw');setTimeout(function(){i=(i+1)%L2.length;a.textContent=L2[i][0];b.textContent=L2[i][1];a.dir=i===3?'rtl':'ltr';a.classList.remove('sw')},420)},2400)})();
+(function(){var a=$('#hello');if(!a||RM)return;var L2=['English','French','Italian','Farsi'],i=0;
+  setInterval(function(){a.classList.add('sw');setTimeout(function(){i=(i+1)%L2.length;a.textContent=L2[i];a.classList.remove('sw')},420)},2400)})();
 
 /* recommender */
 (function(){var pks=$$('.pk');if(!pks.length)return;var REC={audit:['GTM Audit','Two weeks to find exactly what is broken, and what to fix first.'],sprint:['Pipeline Sprint','Three months to build your outbound engine and run it with you.'],partner:['Revenue Partner','A senior operator embedded as your commercial team.']},c=$('.pick-c'),T=$('#pickT'),D=$('#pickD');
