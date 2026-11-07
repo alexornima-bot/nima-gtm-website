@@ -755,3 +755,26 @@ html:not(.js) .cta-s,.rm .cta-s{position:static;height:auto}
 /* set in CSS, not inline, so the content security policy can forbid inline styles */
 .wk-g .wc:nth-child(2){--i:1}.wk-g .wc:nth-child(3){--i:2}
 .v-bar i:nth-child(1){--h:.28}.v-bar i:nth-child(2){--h:.4}.v-bar i:nth-child(3){--h:.36}.v-bar i:nth-child(4){--h:.58}.v-bar i:nth-child(5){--h:.7}.v-bar i:nth-child(6){--h:.92}
+
+/* ===== Nov 2026 content: channel block, FAQ, privacy page, AI line ===== */
+.chn{padding:var(--section-y) 0;border-top:1px solid var(--hairline)}
+.chn-g{display:grid;gap:20px}
+.chn-g .h2{max-width:20ch}
+.faq{padding:var(--section-y) 0;border-top:1px solid var(--hairline)}
+.faq-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(32px,6vw,96px);align-items:start}
+.faq-l details{border-top:1px solid var(--hairline-strong)}
+.faq-l details:last-child{border-bottom:1px solid var(--hairline-strong)}
+.faq-l summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;min-height:64px;padding:14px 0;font-family:var(--serif);font-weight:500;font-size:clamp(1.4rem,2vw,1.9rem);letter-spacing:-.015em;line-height:1.15}
+.faq-l summary::-webkit-details-marker{display:none}
+.faq-l summary::after{content:"+";font-family:var(--sans);font-weight:400;font-size:1.5rem;color:var(--ink-subtle);transition:transform .4s var(--e);flex:none}
+.faq-l details[open] summary::after{transform:rotate(45deg)}
+.faq-l p{color:var(--ink-muted);font-size:16px;line-height:1.7;padding:0 40px 22px 0;max-width:58ch}
+.mt-ai{max-width:60ch;margin-top:16px;color:var(--ink-muted)}
+.ai-line{max-width:62ch;margin-top:48px}
+.legal{padding:calc(64px + clamp(56px,8vw,104px)) 0 var(--section-y)}
+.legal-w{max-width:880px;margin:0 auto}
+.legal-b{margin-top:40px}
+.legal-b h2{font-family:var(--serif);font-weight:500;font-size:1.8rem;letter-spacing:-.02em;margin:36px 0 10px}
+.legal-b p{color:var(--ink-muted);line-height:1.75;margin-bottom:14px}
+.legal-b a{text-decoration:underline;text-underline-offset:3px}
+@media (max-width:900px){.faq-g{grid-template-columns:1fr}.faq-l p{padding-right:0}}
